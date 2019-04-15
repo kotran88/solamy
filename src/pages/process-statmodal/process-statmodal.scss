@@ -1,0 +1,50 @@
+page-process-statmodal {
+    .modal_wrapper {
+        background-color: #000;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;        
+    }
+    .main-wrap {
+        width: 100%;
+        position: absolute;
+        top: 100px;
+    }
+    .modal_content {
+        width: calc(100% - 60px);        
+        margin: auto;
+        border-radius: 2px;
+        max-width: 280px;
+        background-color: #fafafa;
+        -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+    }
+    .modal-wrapper {
+        text-align: center;
+    }
+    .alert-md .alert-head {
+        width: 280px;
+        padding: 40px 24px;
+    }
+    .alert-md .content {
+        text-align: center;
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: -1px;
+    }
+    .alert-md h3 {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .alert-md p {
+        margin-top: 10px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: -1px;
+    }
+    .alert-md .alert-button {
+        height: 50px;
+    }
+}

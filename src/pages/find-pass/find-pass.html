@@ -1,0 +1,39 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">비밀번호 찾기</span>
+      <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="form">
+    <div class="item tip">
+      <span>
+          가입하신 이메일 주소로 <br>임시비밀번호를 보내 드립니다.
+      </span>
+    
+    </div>
+    <ion-list class="mt20">
+      <ion-item>
+        <ion-input [(ngModel)]="email" type="email" placeholder="이메일주소"></ion-input>
+      </ion-item>
+      <span></span>
+    </ion-list>
+
+    <div class="item btn-cont mt40">
+      <button ion-button color="light" (click)="sendMail()" class="boxBtn sendMail"> <img style="margin-right:5px; width: 22px;
+        height: 15px;" class="mark" src="assets/imgs/envelope.png">보내기</button>
+    </div>
+    <div class="item tip mt10 text-center">
+      메일을 받지 못하셨나요? <strong class="resend" (click)="sendMail()" >다시받기</strong>
+    </div>
+    <hr>
+    <div class="item btn-cont mt30">
+      <p>임시비밀번호로 로그인 후 새로운 비밀 번호를 설정해주세요.</p>
+    </div>
+  </div>
+  
+</ion-content>
+  

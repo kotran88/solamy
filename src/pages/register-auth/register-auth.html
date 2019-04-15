@@ -1,0 +1,39 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">회원가입</span>
+      <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="form">
+    <div class="item tip">
+     {{email}}로 발송된 인증 번호를<br />
+       아래에 입력해주세요.
+    </div>
+    <ion-list class="mt10">
+      <ion-item>
+        <ion-input [(ngModel)]="inputAuthKey" type="number" placeholder="000000001"></ion-input>
+      </ion-item>
+      <span></span>
+    </ion-list>
+
+    <div class="item tip mt40 text-center">
+      인증 번호를 받지 못하셨나요? <strong (click)="resendAuth()">다시받기</strong>
+    </div>
+    <div class="item btn-cont mt40">
+      
+      <button ion-button color="light" (click)="getAuth()" class="boxBtn auth">
+          <img style="width: 14px;
+          height: 14px; margin-right:5px;" class="mark" src="assets/imgs/check.png">
+
+        인증하기
+        <code>{{time}}</code>
+      </button>
+    </div>
+  </div>
+  
+</ion-content>
+  

@@ -1,0 +1,117 @@
+page-analyse-client {
+    
+    .scroll-content {
+        overflow-y: hidden;
+    }
+    .alert-md .alert-input.address {
+        width: calc(100% - 80px) !important;
+    }
+    .alert-md .alert-input{
+        padding-left: 10px;
+    width: calc(100% - 15px);
+    }
+    .alert-md label{
+        margin-top:0.5em;
+        width: 100% !important;
+        color:black !important;
+    }
+    .alert-md button {
+        width: 60px;
+        letter-spacing: -1px;
+        font-size: 12px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #dedede;
+    }
+    .alert-md button span {
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+    .alert-md.double lable {
+        vertical-align: bottom;
+    }
+    // btns
+    .btn-cont {
+        width: 100%;
+        margin-top: 40px;
+        text-align: center;
+    }
+    .btn-cont .analyseClient {
+        margin: 0 auto;
+    border-radius: 5px;
+        font-size: 15px;
+        color: white;
+        height: 45px;
+        background: #e15a00;
+        width: 95%;
+    }
+    .btn-cont .analyseClient img {
+        width: 17px;
+        margin-right: 10px;
+    }
+    .tip-cont {
+        text-align: center;
+        font-size: 14px;
+        padding: 20px 10px;
+        color: red;
+        letter-spacing: -1px;
+        background: #efefef;
+        width: 95%;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 1px;
+    }
+    
+    // search
+    .search .bg {
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 999;
+        position: absolute;
+    }
+    .search ion-searchbar { padding: 0; }
+    .search .result-wrap { position: relative; }
+    .search .top-area {
+        z-index: 100000;
+        position: absolute;
+        width: calc(100% - 20px);
+        margin: 10px;
+        height: 40px;
+        background: none;
+        border: none!important;
+    }
+    .search .etcForm .inp {
+        height: 40px;
+        padding-left: 20px;
+        border-radius: 3px;
+        width: 100%;
+    }
+    .search .top-area a {
+        height: 40px;
+        margin-left: 5px;
+        border-radius: 3px;
+        background-color: #e15a00;
+    }
+    .search .result {
+        position: absolute;
+        right: 10px;
+        top: 50px;
+        z-index: 1000;
+        padding: 10px 0;
+        width: calc(100% - 20px);
+    }
+    .search .result li {
+        height: 30px;
+        width: 100%;
+        line-height: 28px;
+        font-size: 13px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        border: 1px solid #eee;
+        background: #FFF;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    }
+}

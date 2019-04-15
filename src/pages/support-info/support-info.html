@@ -1,0 +1,73 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">제공되는 정보</span>
+      <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <h3><img src="assets/imgs/support_info/info.png" width="20"> 제공되는 서비스</h3>
+
+  <ion-grid class="p0 ion-grid grid_1">
+    <ion-row class="btn-cont">
+      <ion-col col-6 class="price-comp">
+        <div class="middle-wrap">
+          <div class="img-top"><img class="mark" src="assets/imgs/support_info/comp_price.png"></div>
+          <div class="text-cont"><h6>가격비교</h6></div>
+        </div>
+      </ion-col>
+      <ion-col col-6 class="expect-img">
+        <div class="middle-wrap">
+          <div class="img-top"><img class="mark" src="assets/imgs/support_info/expect_img.png"></div>
+          <div class="text-cont"><h6>당신의 주택/건물에 <br/>설치 할 경우 예상 이미지</h6></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="p0 ion-grid grid_1">
+    <ion-row class="btn-cont">
+      <ion-col col-6 class="price-comp expect-pow">
+        <div class="middle-wrap">
+          <div class="img-top"><img class="mark" src="assets/imgs/support_info/expect_power.png"></div>
+          <div class="text-cont"><h6>당신의 주소지의 <br/>월간 예상 발전량</h6></div>
+        </div>
+      </ion-col>
+      <ion-col col-6 class="expect-img sale_money">
+        <div class="middle-wrap">
+          <div class="img-top"><img class="mark" src="assets/imgs/support_info/sale_money.png"></div>
+          <div class="text-cont"><h6>전기료 절감 누적금액</h6></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="p0 ion-grid grid_2">
+    <ion-row class="btn-cont">
+      <ion-col class="fee-elect">
+        <div class="middle-wrap">
+          <div class="img-top"><img class="mark" src="assets/imgs/support_info/fee_sale.png"></div>
+          <div class="text-cont"><h6>전기료 감면 효과</h6></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <div class="btn-wrap" *ngIf="!isLogin()">
+    <div class="sample-cont">
+      <button ion-button color="light" (click)="sample()" class="boxBtn sample">샘플 (예시)</button>
+    </div>
+    
+    <div class="login-cont">
+      <button ion-button color="light" class="login" (click)="login()">로그인</button>
+      <button ion-button color="light" class="register" (click)="registerPage()">회원가입</button>
+    </div>
+  </div>
+  
+  <div class="btn-wrap" *ngIf="isLogin()">
+    <div class="sample-cont mt40">
+      <button ion-button color="light" (click)="sample()" class="boxBtn sample">샘플 (예시)</button>
+    </div>
+  </div>
+</ion-content>

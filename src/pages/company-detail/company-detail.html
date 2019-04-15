@@ -1,0 +1,69 @@
+
+<ion-header>
+  <div class="top_bar">
+    <span class="title">상세정보</span>
+    <img src="assets/imgs/close.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="hasComData()">
+    <div class="top-wrap">
+      <img src="assets/imgs/processing_banner.png" class="bg">
+      <h3 class="name">{{ comData.company_name.substring(0, 2) }}***</h3>
+      <p><img src="assets/imgs/area_mark.png" width="15" /> {{ comData.area }} </p>
+      <h4><img src="assets/imgs/star2.png" width="15" /> {{ convRate(comData.rate) }} </h4>
+    </div>
+    
+    <div class="wrap">
+      <div class="list" style="height: 53px;">
+        <label style="margin-top:9px;">예상 가격</label>
+        <div class="content">
+          {{ numFormat(comData.final_price) }}원
+          <p>세금계산서 또는 현금영수증 발급 가능합니다.</p>
+        </div>
+      </div>
+      <div class="list">
+        <label>예상 설치용량</label>
+        <div class="content">{{ numFormat(comData.solar_power) }}kw</div>
+      </div>
+      <div class="list" *ngIf="hasContInfo('module_name')">
+        <label>모듈 제품명</label>
+        <div class="content">{{ contInfoData.module_name }}</div>
+      </div>
+      <div class="list" *ngIf="hasContInfo('inv_name')">
+        <label>인버터 제품명</label>
+        <div class="content">{{ contInfoData.inv_name }}</div>
+      </div>
+      <div class="list" *ngIf="hasContInfo('quality')">
+        <label>설치할 구조물 품질</label>
+        <div class="content">{{ contInfoData.quality }}</div>
+      </div>
+      <div class="list" *ngIf="electLicence()">
+        <label>전기면허증</label>
+        <div class="content"><button ion-button color="light" (click)="viewImg(elect_licence)">보기</button></div>
+      </div>
+      <div class="list" *ngIf="hasContInfo('module_guarent')">
+        <label>모듈보증</label>
+        <div class="content">{{ contInfoData.module_guarent }}</div>
+      </div>
+      <div class="list" *ngIf="hasContInfo('inv_guarent')">
+        <label>인버터보증</label>
+        <div class="content">{{ contInfoData.inv_guarent }}</div>
+      </div>
+      <div class="list">
+        <label>설치 후 A/S조건</label>
+        <div class="content">{{ comData.as_guide }}</div>
+      </div>
+      <div class="list mb10">
+        <label>결제종류</label>
+        <div class="content">현금(에스크로 계좌)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-data mt30" *ngIf="!hasComData()">
+    <h3>로딩중입니다...</h3>
+  </div>
+
+</ion-content>

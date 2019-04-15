@@ -1,0 +1,61 @@
+<div class="modal_wrapper">    
+</div>
+<div class="modal_content">        
+    <div class="title_bar"></div>
+    <div class="calendar_container">
+        <div *ngFor="let item of calendarArr ; let idx = index" class="content">
+            <ion-row class="mt5">
+                <ion-col col-1></ion-col>
+                <ion-col col-3>
+                    <div class="border"></div>
+                </ion-col>
+                <ion-col col-4 class="date_txt">{{item.year}}년 {{item.month}}월</ion-col>
+                <ion-col col-3>
+                    <div class="border"></div>
+                </ion-col>
+                <ion-col col-1></ion-col>
+            </ion-row>
+            <div class="calendar_content mt5">
+                <div class="weekday">일</div>
+                <div class="weekday">월</div>
+                <div class="weekday">화</div>
+                <div class="weekday">수</div>
+                <div class="weekday">목</div>
+                <div class="weekday">금</div>
+                <div class="weekday">토</div>
+            </div>        
+            <div *ngFor="let days of item.days ; let idx = index" class="calendar_content">
+                <div (click)="selDay(item.year, item.month, days[0])" class="{{ isEnableSel(item.year, item.month, days[0]) }}">
+                    <div *ngIf="isToday(item.year, item.month, days[0])" class="today">{{ days[0] }}</div>
+                    <div *ngIf="!isToday(item.year, item.month, days[0])" class="other">{{ days[0] }}</div>
+                </div>
+                <div (click)="selDay(item.year, item.month, days[1])" class="{{ isEnableSel(item.year, item.month, days[1]) }}">
+                        <div *ngIf="isToday(item.year, item.month, days[1])" class="today">{{ days[1] }}</div>
+                        <div *ngIf="!isToday(item.year, item.month, days[1])" class="other">{{ days[1] }}</div>
+                </div>
+                <div (click)="selDay(item.year, item.month, days[2])" class="{{ isEnableSel(item.year, item.month, days[2]) }}">
+                    <div *ngIf="isToday(item.year, item.month, days[2])" class="today">{{ days[2] }}</div>
+                    <div *ngIf="!isToday(item.year, item.month, days[2])" class="other">{{ days[2] }}</div>
+                </div>
+                <div (click)="selDay(item.year, item.month, days[3])" class="{{ isEnableSel(item.year, item.month, days[3]) }}">
+                    <div *ngIf="isToday(item.year, item.month, days[3])" class="today">{{ days[3] }}</div>
+                    <div *ngIf="!isToday(item.year, item.month, days[3])" class="other">{{ days[3] }}</div>
+                </div>
+                <div (click)="selDay(item.year, item.month, days[4])" class="{{ isEnableSel(item.year, item.month, days[4]) }}">
+                    <div *ngIf="isToday(item.year, item.month, days[4])" class="today">{{ days[4] }}</div>
+                    <div *ngIf="!isToday(item.year, item.month, days[4])" class="other">{{ days[4] }}</div>
+                </div>
+                <div (click)="selDay(item.year, item.month, days[5])" class="{{ isEnableSel(item.year, item.month, days[5]) }}">
+                    <div *ngIf="isToday(item.year, item.month, days[5])" class="today">{{ days[5] }}</div>
+                    <div *ngIf="!isToday(item.year, item.month, days[5])" class="other">{{ days[5] }}</div>
+                </div>
+                <div (click)="selDay(item.year, item.month, days[6])" class="{{ isEnableSel(item.year, item.month, days[6]) }}">
+                    <div *ngIf="isToday(item.year, item.month, days[6])" class="today">{{ days[6] }}</div>
+                    <div *ngIf="!isToday(item.year, item.month, days[6])" class="other">{{ days[6] }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button ion-button class="mt15" (click)="cancel()">취소</button>
+    <button ion-button class="mt15 other_btn" (click)="confirm()">확인</button>
+</div>

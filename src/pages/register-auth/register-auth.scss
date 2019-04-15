@@ -1,0 +1,61 @@
+page-register-auth {
+
+    .scroll-content {
+        overflow-y: hidden;
+        background-color:#eff2f3;
+        text-align: center;
+    }
+    .form {
+        position: absolute;
+        top: 7%;
+        width: 100%;
+        padding: 0;
+    }
+    ion-list { margin-bottom: 10px !important; }
+    ion-list ion-item {
+        background: transparent !important;
+        padding: 0 40px!important;
+    }
+    ion-input { color: #555; font-size: 17px; }
+    .text-input-md { text-align: center; }
+    .tip { 
+        color: #555555;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 0 40px;
+        letter-spacing: -0.9px; 
+    }
+    // check box
+    .item.check-cont { padding: 0 40px; }
+    .item label, .item strong { 
+        color:#555555; 
+        font-size: 13px; 
+    }
+    .item strong { text-decoration: underline; color: #e15a00; margin-left: 10px; }
+    // button
+    .item.btn-cont { padding: 0 40px 20px;}
+    .item.btn-cont button{
+        margin: 0;
+        border-radius: 1rem;
+        font-size: 17px;
+        color: white;
+        height: 45px;
+    }
+    .item.btn-cont button.auth {
+        background-color: #e15a00;
+        margin-top: 10px;
+    }
+    .item.btn-cont button.auth img {
+        width: 15px;
+        top: 15px;
+    }
+    .item.btn-cont button.auth code {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-weight: 500;
+        color: #f6f6f6;
+        letter-spacing: -1px;
+    }
+    
+}

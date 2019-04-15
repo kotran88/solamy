@@ -1,0 +1,42 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">내 의뢰 현황</span>
+      <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+  
+<ion-content padding>
+ 
+
+  <ion-grid class="p0 ion-grid" *ngFor="let item of clientData ; let idx = index">
+    <ion-row>
+      <ion-col col-12>
+        <div class="wrap">
+          <p class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
+          <p class="contract mt1" *ngIf="hasContDate( idx )">[계약일] <span>{{ returnData(item.contract_time) }}</span> </p>
+          <div class="address mt10">ㆍ{{item.address}}</div>
+          <div class="fee">ㆍ월평균 전기 요금: {{numFormat(item.month_fee)}}원</div>
+        </div>
+
+        <div class="btn-cont">
+          <div class="analyseBtn" (click)="analyseResult(item.id)">
+            <img src="assets/imgs/bar-chart.png">분석결과
+          </div>
+          <div class="process" (click)="processStatus(item.id)">
+            <img src="assets/imgs/check.png">진행현황
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="mt30 b-none" *ngIf="!isClient()">
+    <div class="address mt30 text-center">의뢰한 목록이 없습니다.</div>
+    
+    <div class="btn-client mt30">
+      <button ion-button color="light" (click)="analyseClient()" class="boxBtn analyseClient"><img src="assets/imgs/bar-chart.png">분석 의뢰하기</button>
+    </div>
+  </ion-grid>
+  
+</ion-content>

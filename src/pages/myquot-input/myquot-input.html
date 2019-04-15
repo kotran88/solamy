@@ -1,0 +1,93 @@
+
+<ion-header>
+  <div class="top_bar">
+    <span class="title">견적 입력</span>
+    <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div class="wrap" *ngIf="!isQuot()">
+    <div class="list">
+      <label stacked>설치인원</label>
+      
+      <div class="value">{{person}}</div><span style="display: block;
+      width: 100px;
+      position: absolute;
+      left: 10%;
+      top: 50%;" class="unit">명</span>
+      <img src="assets/imgs/minus.png" style="right: 15%;" class="operator" (click)="operator('dec')">
+      <img src="assets/imgs/plus.png" style="right: 5%;" class="operator" (click)="operator('inc')">
+    </div>
+
+    <div class="list">
+      <label class="mb0" stacked>제안 견적비용</label>
+      <input style="    border-bottom: solid lightgray 1px;" type="text" class="width95" value="390,000" [(ngModel)]="insPrice" />
+    </div>
+
+    <ion-item class="mt10" *ngIf="hasContInfo('module_name')">
+      <ion-label style="font-size: 15px;
+      color: black;" stacked>모듈 제품명</ion-label>
+      <ion-select placeholder="선택하세요" interface="popover" [(ngModel)]="module_name">
+        <ion-option *ngFor="let item of modNameData ; let idx = index" value="{{item}}" selected="isFirst(idx)">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item style="    background: lightgray;" *ngIf="hasContInfo('inv_name')">
+      <ion-label style="font-size: 15px;
+      color: black; "  stacked>인버터 제품명</ion-label>
+      <ion-select interface="popover" [(ngModel)]="inv_name">
+        <ion-option *ngFor="let item of invNameData ; let idx = index" value="{{item}}" selected="isFirst(idx)">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item *ngIf="hasContInfo('quality')">
+      <ion-label style="font-size: 15px;
+      color: black; "  stacked>설치할 구조물 품질</ion-label>
+      <ion-select interface="popover" [(ngModel)]="quality">
+        <ion-option *ngFor="let item of qualityData ; let idx = index" value="{{item}}" selected="isFirst(idx)">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item *ngIf="hasContInfo('module_guarent')">
+      <ion-label style="font-size: 15px;
+      color: black; "  stacked>모듈보증</ion-label>
+      <ion-select interface="popover" [(ngModel)]="module_guarent">
+        <ion-option *ngFor="let item of modGuaData ; let idx = index" value="{{item}}" selected="isFirst(idx)">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item *ngIf="hasContInfo('inv_guarent')">
+      <ion-label style="font-size: 15px;
+      color: black; " stacked>인버터 보증</ion-label>
+      <ion-select interface="popover" [(ngModel)]="inv_guarent">
+        <ion-option *ngFor="let item of invGuaData ; let idx = index" value="{{item}}" selected="isFirst(idx)">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="list mt10">
+      <label stacked>보증기간 및 A/S 안내</label>
+      <textarea class="textarea" placeholder="설치 완료 후 내부 A/S 규정 입력해주세요" [(ngModel)]="as_guide"></textarea>
+    </div>
+    
+    <div class="list">
+      <label class="mb0" stacked>최종 소비자가 입력 (부가세 포함 가격)</label>
+      <input  style="    border-bottom: solid lightgray 1px;" type="text" class="width95" value="390,000" [(ngModel)]="final_price" />
+    </div>
+
+    <div class="btn-cont">
+      <button style="border-radius: 10px;
+      color: white; color: black;
+    font-size: 25px;" ion-button color="light" (click)="quotSubmit()" class="boxBtn quotSubmit"><img src="assets/imgs/calcu.png"/>견적 제출하기</button>
+    </div>
+
+  </div>
+
+  <div class="wrap complete" *ngIf="isQuot()">
+    <p class="mt10">견적서를 제출해 주셔서 감사합니다. </p>
+    <p class="mt20">제출해주신 사항에 대한 진행 여부는 <br/>계약 및 완료 메뉴에서 확인 가능합니다.</p>
+    <div class="text-center">
+      <button ion-button (click)="quotList()" class="mt20">제출견적 목록</button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,27 @@
+<!--
+  Generated template for the CurrentInstallPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+      <div class="top_bar">
+          <span class="title">설치 현황</span>
+          <img style="    width: 32px;
+          height: 25px;
+          top: 0;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+      </div>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="container" *ngFor="let a of installArray" style="    width: 90% !important;">
+        <img (click)="gotodetail(a);" src="{{a.url}}" alt="Car" style="width:100%">
+        <div class="bottom">
+        <p style="font-size:17px; text-align: center">{{a.area}}</p>
+        </div>
+      </div>
+
+</ion-content>

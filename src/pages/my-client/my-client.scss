@@ -1,0 +1,102 @@
+page-my-client {
+    .scroll-content{
+        background:#eff2f3;
+    }
+    .top-wrap {
+        height: 140px;
+        padding: 20px;
+        box-shadow: 0px 3px 6px #ccc;
+    }
+    .top-wrap .img-wrap img {
+        width: 80px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+    .top-wrap h3 {
+        margin-top: 5px!important;
+        font-size: 16px;
+        font-weight: 700;
+        color: #555;
+        letter-spacing: -1px;
+    }
+    .border-cont {
+        border-top: 3px solid #eee;
+        margin-top: 4px;
+    }
+    // 
+    ion-grid {
+
+    width: 90% !important;
+    margin-top: 1em;
+    background: white;
+    border-radius: 20px 20px 20px 20px;
+        border-bottom:0px !important;
+    }
+    ion-grid ion-col {
+        padding: 0 !important;
+    }
+    ion-grid .wrap {
+        padding: 20px;
+    }
+    ion-grid .wrap .date {
+        color: #147cdd;
+        font-size: 13px;
+    }
+    ion-grid .wrap .contract {
+        color: #f10909;
+        font-size: 13px;
+    }
+    ion-grid .wrap div {
+        color: #555555;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 5px;
+        text-indent: -14px;
+        padding-left: 14px;
+        
+    }
+    .btn-cont div {
+        width: 50%;
+        float: left;
+        padding: 15px;
+        color: #fff;
+        height: 50px;
+        text-align: center;
+        font-weight: 700;
+    }
+    .btn-cont div img {
+        width: 16px;
+        vertical-align: top;
+        margin-top: 1px;
+        margin-right: 10px;
+    }
+    .btn-cont div.analyseBtn {
+        background: #E7641C;
+        border-radius: 0 0 0 20px;
+    }
+    .btn-cont div.process {
+        background: #2E58A2;
+
+    border-radius: 0 0 20px 0;
+    }
+    
+    // btns
+    .btn-client {
+        width: 100%;
+        text-align: center;
+        margin: 20px auto;
+    }
+    .btn-client .analyseClient {
+        margin: 0 auto;
+        border-radius: 1rem;
+        font-size: 15px;
+        color: #FFF;
+        height: 45px;
+        background: #E7641C;
+        width: 90%;
+    }
+    .btn-client .analyseClient img {
+        width: 20px;
+        margin-right: 10px;
+    }
+}

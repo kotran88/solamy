@@ -1,0 +1,163 @@
+page-myinfo-update {
+    ion-content {
+        color: #333;
+    }
+    .top-wrap {
+        text-align: center;
+        height: 105px;
+        padding: 30px 0 15px;
+        box-shadow: 0px 3px 6px #ccc;
+    }
+    .top-wrap h6 {
+        font-size: 12px;
+        letter-spacing: -1px;
+    }
+    .top-wrap button {
+        border: 1px solid #E7641B;
+        border-radius: 10rem;
+        background: none;
+        padding: 5px;
+        width: 100px;
+        color: #E7641C;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .top-wrap button .button-inner {
+        font-size: 13px;
+        letter-spacing: -1px;
+    }
+    .border-cont {
+        border-top: 3px solid #eee;
+        margin-top: 4px;
+    }
+    .alert-md label{
+        width: 100% !important;
+        margin-top: 1em !important;
+    }
+    // form area
+    .form .main-info { margin-top: 15px; }
+    .form .main-info label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #999;
+    }
+    .form .main-info span {
+        color: red;
+        font-size: 10px;
+        float: right;
+        letter-spacing: -1px;
+    }
+    .alert-md .alert-input.address {
+        width: calc(100% - 80px);
+    }
+    .hrline{
+   
+        height: 0.5px;
+        width: 100%;
+        margin-top: 1em;
+        border: solid 0.5px lightgray;
+    }
+    .alert-md button {
+        width: 60px;
+        letter-spacing: -1px;
+        font-size: 12px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+        background: black;
+    color: white;
+    border-radius: 10px;
+
+    }
+    .alert-md button span {
+        font-size: 12px;
+        letter-spacing: 0;
+        color:white;
+    }
+    .alert-md.double label {
+        vertical-align: bottom;
+    }
+    .alert-md.double button {
+        width: 80px;
+    }
+    .alert-md.double span.file-name {
+        vertical-align: middle;
+        margin: 0 10px;
+        position: relative;
+        top: 2px;
+        font-size: 12px;
+    }
+    .alert-md.double img {
+        vertical-align: middle;
+        width: 15px;
+        margin-top: 6px;
+    }
+    // btns
+    .btn-cont {
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
+    }
+    .btn-cont .save {
+        margin: 0 auto;
+        border-radius: 10rem;
+        font-size: 15px;
+        color: #333;
+        height: 45px;
+        background: #FFA200;
+        width: 95%;
+    }
+    
+    // search
+    .search .bg {
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 999;
+        position: absolute;
+    }
+    .search ion-searchbar { padding: 0; }
+    .search .result-wrap { position: relative; }
+    .search .top-area {
+        z-index: 100000;
+        position: absolute;
+        width: calc(100% - 20px);
+        margin: 10px;
+        height: 40px;
+        background: none;
+        border: none!important;
+    }
+    .search .etcForm .inp {
+        height: 40px;
+        padding-left: 20px;
+        border-radius: 3px;
+        width: 100%;
+    }
+    .search .top-area a {
+        height: 40px;
+        margin-left: 5px;
+        border-radius: 3px;
+        background-color: #FFA200;
+    }
+    .search .result {
+        position: absolute;
+        right: 10px;
+        top: 50px;
+        z-index: 1000;
+        padding: 10px 0;
+        width: calc(100% - 20px);
+    }
+    .search .result li {
+        height: 30px;
+        width: 100%;
+        line-height: 28px;
+        font-size: 13px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        border: 1px solid #eee;
+        background: #FFF;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    }
+}

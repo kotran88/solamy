@@ -1,0 +1,83 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">샘플(예시)</span>
+      <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div class="sample-wrap">
+    
+    <div class="top-wrap">
+      <img src="assets/imgs/analyse/analyze_banner.png">
+    </div>
+    <h3 class="address">
+      <img src="assets/imgs/analyse/area.png"> 경기 포천시 소흘읍
+    </h3>
+  
+    <div class="wrap">
+      <div class="title fee">
+        <img src="assets/imgs/analyse/fee-sale.png" width="15"> 전기료 감면효과
+      </div>
+      <div class="content gray">
+        우리집 월평균 전기요금 <span>100,000</span>
+      </div>
+      <div class="content yellow">
+        전기료 예상 절감액 <span>- 80,000</span>
+      </div>
+      <div class="content light-blue">
+        설치후 전기요금 <span>20,000</span>
+      </div>
+      <div class="description blue">
+        <p>20년간 누적 예상 전기요금 절감액</p>
+        <h3>3,085 <span>만원</span> </h3>
+      </div>
+    </div>
+    
+    <div class="wrap">
+      <div class="title module">
+        <img src="assets/imgs/analyse/module.png" width="20"> 태양광 최적 설치 정보
+      </div>
+      <div class="content gray">
+        태양광 최적 설치 용량 <span class="blue">3kw</span>
+      </div>
+      <div class="content gray">
+        최적각도 <span class="blue">33도</span>
+      </div>
+      <div class="content gray">
+        월간 예상 평균 발전량 <span class="blue">350kw</span>
+      </div>
+      <div class="content gray">
+        20년간 누적 예상 발전량 <span class="blue">48,350kw</span>
+      </div>
+    </div>
+  
+    <div class="wrap">
+      <div class="title module carborn">
+        <img src="assets/imgs/analyse/carborn-sale.png" width="20"> 탄소저감효과
+      </div>
+      <div class="description blue">
+        <p class="gray">30년생 소나무 심는 효과</p>
+        <h3 class="deep-green"> <img src="assets/imgs/analyse/tree.png" class="ml2" width="18"> 1,000 <span>그루</span> </h3>
+      </div>
+      <div class="description blue b-none">
+        <p class="gray">CO2 탄소 저감 효과</p>
+        <h3 class="blue"> <img src="assets/imgs/analyse/lamp.png" class="ml2" width="14"> 700 <span>톤</span> </h3>
+      </div>
+    </div>
+
+  </div>
+  <!-- sample container -->
+  
+  <div class="btn-cont">
+    <button ion-button color="light" *ngIf="!isLogin()" (click)="login()" class="boxBtn analyseClient"><img src="assets/imgs/analyze_client_w.png">분석 의뢰하기</button>
+    <button ion-button color="light" *ngIf="isLogin()" (click)="analyseClient()" class="boxBtn analyseClient"><img src="assets/imgs/analyze_client_w.png">분석 의뢰하기</button>
+  </div>
+  
+  <div class="login-cont" *ngIf="!isLogin()">
+    <button ion-button color="light" class="login" (click)="login()">로그인</button>
+    <button ion-button color="light" class="register" (click)="registerPage()">회원가입</button>
+  </div>
+
+</ion-content>

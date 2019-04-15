@@ -1,0 +1,236 @@
+
+<ion-content padding>
+  <div class="top-cont">
+      <div class="logo-cont">
+          <img class="bg" src="assets/imgs/solarmy_logo.png">
+          <img style="width: 25px;
+          height: 25px;
+          float: right;
+          position: relative;
+          top: 10px;
+          right: 25px;" src="assets/imgs/sharing.png" (click)="setting()">
+
+      </div>
+     
+     
+      
+  </div>
+ 
+  <div class="main-upper">
+    <div class="main-banner">
+      <div class="main-image">
+          <ion-slides  style="width:100% !important; height:220px"  pager >
+              <ion-slide *ngFor="let a of picturelist" (click)="opening(a)" style="width:100% !important;" >
+                  <img   src="{{a.file}}">
+              </ion-slide>
+              
+            </ion-slides>
+         
+      </div>
+    </div>
+    <div class="main-login">
+        <div class="auth-cont" *ngIf="!isLogin()">
+          <button  style="   
+          text-align: center;
+          background: #e15a00;
+          width: 40%;
+    border-radius:  10px 0 0px 10px;
+margin-left: -0.5em;
+    -webkit-box-shadow: none !important;
+    color: white;
+          " ion-button color="light" class="login" (click)="login()">
+         <img style="width: 12px;
+  height: 12px;" class="mark" src="assets/imgs/lock-open.png">&nbsp;
+   로그인</button>
+          <button  style="
+          color: black;
+          text-align: center;
+          background: #e97e00;
+          width: 40%;
+    border-radius: 0px 10px 10px 0px;
+margin-left: -0.5em;
+    -webkit-box-shadow: none !important;
+    color: white;
+
+          " ion-button color="light" class="register" (click)="registerPage()"><img style="width: 12px;
+    height: 12px;" class="mark" src="assets/imgs/following.png">&nbsp;회원가입</button>
+        </div>
+      </div>
+    
+      <div *ngIf="isLogin()&&isPartners()">
+        <button style="   
+        text-align: center;
+        background: #ff4000;
+    border-radius: 6px;
+  color: white;
+  width: 80%;
+        " ion-button color="light" class="login" (click)="myQuotStatus()"><img style="width: 14px;
+  height: 14px; margin-right:5px;" class="mark" src="assets/imgs/folder.png">내 견적 현황</button>
+      </div>
+    <div class="main-second" *ngIf="isLogin()">
+ <div *ngIf="isLogin()&&!isPartners()">
+        <button style="   
+        text-align: center;
+    border-radius: 6px;
+        background: #ff4000;
+  color: white;
+  width: 80%;
+        " ion-button color="light" class="login" (click)="myclientt()"><img style="width: 12px;
+  height: 12px;" class="mark" src="assets/imgs/folder.png">내 의뢰 현황</button>
+ </div>
+    </div>
+    <div style="    margin-top: 1em;" class="quotation">
+      <div class="up" style="display: list-item;    margin-top: 0.8em;">
+          <span style="  font-size:18px;  float: left;
+          margin-left: 18px;" (click)="quotation();">실시간 견적현황</span>
+          <span class="more" style="
+          float: right;
+    
+          margin-right: 30px;" (click)="quotation();">more</span>
+          <img class="arrow" src="assets/imgs/arrow.png"/>
+          <hr style="    margin: 5px 0 !important;">
+          
+      </div>
+      <div #scroll class="down">
+        <div *ngFor="let a of array_quotaion">
+
+
+          <p style="    height: 15px;
+           white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+          overflow-x: hidden; width:50%; text-align: left; margin-left:15px; float:left;"> {{a.address}}  </p> <p style="width:15%; float:left;"> {{a.name}}</p><p style="width:20%; margin-right:15px; float:left;">{{a.reg_date}}</p>
+          </div>
+      </div>
+     
+
+      
+    </div>
+    <!-- <div class="main-second" *ngIf="isLogin()&&isPartners()">
+    
+    </div> -->
+
+   
+    <div  class="main-second" *ngIf="isLogin()&&!isPartners()">
+      <button  style="   
+      text-align: center;
+      background: #353b5d;
+    margin-top: 1em;
+    border-radius: 10px;
+color: white;
+width: 80%;
+      " ion-button color="light" class="login" (click)="anal()"> <img style="width: 12px;
+  height: 12px;     margin-right: 5px;" class="mark" src="assets/imgs/bar-chart.png">
+   분석 의뢰하기</button>
+      </div>
+      <div  *ngIf="isPartners()" class="baek">
+          <button   style="   
+          text-align: center;
+      -webkit-box-shadow: none !important;
+          background: #353b5d;
+      border-radius: 30px 0px 0px 30px;
+      color: white;
+          " ion-button color="light" class="login" (click)="chargeGuidePage()"><img style="width: 14px;
+      height: 12px; margin-right:5px;" class="mark" src="assets/imgs/calcu.png">이용요금 안내</button>
+      <button *ngIf="isPartners()"  style="   
+      text-align: center;
+      background: #566174;
+      color: white;
+      border-radius: 0px 30px 30px 0px;
+      margin-left: -0.5em;
+      -webkit-box-shadow: none !important;
+      " ion-button color="light" class="login" (click)=" myInfoUpdate()"><img style="width: 14px;
+      height: 12px; margin-right:5px;" class="mark" src="assets/imgs/following.png">내 정보 업데이트</button>
+        </div>
+      
+      <div class="main-second" *ngIf="!isLogin()">
+          <button style="   
+          text-align: center;
+          background: #353b5d;
+    color: white;
+margin-top:1em;
+    border-radius: 10px;
+    width: 80%;
+          " ion-button color="light" class="login" (click)="anal()"><img style="width: 12px;
+    height: 12px;     margin-right: 5px;" class="mark" src="assets/imgs/bar-chart.png">분석 의뢰하기</button>
+   
+        </div>
+    
+    <!-- <div class="analyze">
+      <ion-grid class="p0 ion-grid grid_2" *ngIf="!isPartners()" (click)="login()">
+        <ion-row class="btn-cont">
+          <ion-col class="analyse">
+            <div class="middle-wrap">
+              <div class="img-top"><img class="mark" src="assets/imgs/home/analyse.png"></div>
+              <div class="text-cont"><h6>분석 의뢰하기</h6></div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+    </div> -->
+    <div class="installation">
+      <div class="up" style="display: list-item;    margin-top: 0.8em;">
+       
+        <span style="    float: left;
+       
+        margin-left: 15px; font-size: 18px;" (click)="installcheck()">설치 현황</span>
+      <span class="more" style="
+      float: right;
+
+      margin-right: 30px;" (click)="installcheck();">more</span>
+      <img class="arrow" src="assets/imgs/arrow.png"/>
+      <hr style="    margin: 5px 0 !important;">
+    </div>
+      
+      <div class="w3-row-padding"> 
+  
+        <div *ngFor="let a of arrayInstall" class="w3-third" style="width:50%; 
+        margin-top: 1em;">
+        <div  class="w3-card">
+          <img class="installpic" src="{{a.url}}" alt="Car" style="width:100%">
+          <div class="w3-container">
+          <p style="text-align: center">{{a.subject}}</p>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  
+    <button style="   
+          text-align: center;
+    -webkit-box-shadow: none !important;
+          background: #353b5d;
+          width: 40%;
+          margin-top: 20px;
+    border-radius: 30px 0px 0px 30px;
+    color: white;
+          " ion-button color="light" class="login" (click)="service_intro()"><img style="width: 12px;
+    height: 12px;     margin-right: 5px;" class="mark" src="assets/imgs/grid.png">서비스 소개</button>
+    <button style="   
+    text-align: center;
+    background: #566174;
+color: white;
+margin-top: 20px;
+width: 40%;
+    border-radius: 0px 30px 30px 0px;
+margin-left: -0.5em;
+    -webkit-box-shadow: none !important;
+    " ion-button color="light" class="login" (click)="customer_center()"><img style="width: 12px;
+height: 12px;     margin-right: 5px;" class="mark" src="assets/imgs/earphone.png">고객센터</button>
+
+   
+
+  </div>
+  
+  
+</ion-content>
+
+<ion-footer>
+  <div class="footer-cont">
+    <h3>© 솔라미(Solarmy)</h3>
+    <p>통신판매업신고: 제20129-경기포천-19129호</p>
+    <img src="assets/imgs/footer_logo.png">
+  </div>
+</ion-footer>

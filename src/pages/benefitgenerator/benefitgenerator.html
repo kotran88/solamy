@@ -1,0 +1,50 @@
+<ion-header>
+    <div class="top_bar">
+        <span class="title">상담요청</span>
+        <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+    </div>
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <div class="banner">
+    </div>
+    
+    
+    <div style="
+    height: 180px;" class="wrap cont_2">
+      
+      <h3   style="color: #ff4000; 
+      padding-left: 10px;" class="mt10">수익형 발전소(상업용)</h3>
+      <p class="mt1">수익형 정부지원사업 설명 태양광태양광 정부지원사업 설명 태양광</p>
+      <p class="mt1">수익형 정부지원사업 설명 태양광태양광 정부지원사업 설명 태양광</p>
+      <p class="mt1">수익형 정부지원사업 설명 태양광태양광 정부지원사업 설명 태양광</p>
+      <p class="mt1">수익형 정부지원사업 설명 태양광태양광 정부지원사업 설명 태양광</p>
+      <p class="mt1">수익형 정부지원사업 설명 태양광태양광 정부지원사업 설명 태양광</p>
+     
+    </div>
+    <div class="form mt30">
+        <div class="alert-md">
+          <label>이메일</label>
+          <input type="text" class="alert-input" [(ngModel)]="email"/>
+        </div>
+        <div class="alert-md">
+          <label>성함</label>
+          <input type="text" class="alert-input" [(ngModel)]="name"/>
+        </div>
+        <div class="alert-md">
+            <label>연락처</label>
+            <input type="text" class="alert-input" [(ngModel)]="tel"/>
+          </div>
+      </div>
+    <button style="   
+    background: #ff4000;
+    color: white;
+    width: 75%;
+    border-radius: 5px;
+    margin: auto;
+    top: 20px;
+    display: -webkit-box;"
+     ion-button color="light"  (click)="consulting()">상담 요청하기</button>
+
+  </ion-content>

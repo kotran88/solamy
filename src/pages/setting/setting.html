@@ -1,0 +1,35 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">설정</span>
+      <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item (click)="resetPass()" *ngIf="isEmail()">
+    <ion-label>비밀번호 변경</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>푸시알림 설정</ion-label>
+    <ion-toggle color="energized" (ionChange)="pushChange()" [(ngModel)]="push_flag"></ion-toggle>
+  </ion-item>
+
+  <ion-item (click)="term()">
+    <ion-label>이용약관</ion-label>
+  </ion-item>
+  
+  <ion-item (click)="personal()">
+    <ion-label>개인정보취급방침</ion-label>
+  </ion-item>
+  
+  <ion-item (click)="logout()">
+    <ion-label>로그아웃</ion-label>
+  </ion-item>
+  
+  <ion-item (click)="memberExit()">
+    <ion-label>회원 탈퇴</ion-label>
+  </ion-item>
+</ion-content>

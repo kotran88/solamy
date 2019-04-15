@@ -1,0 +1,54 @@
+
+<ion-header>
+  <div class="top_bar">
+    <span class="title">견적 보기</span>
+    <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="wrap" *ngIf="hasData()">
+    <h6>[제출일자] {{ returnData(submitCont.reg_time) }} </h6>
+    <div class="list">
+      <label>설치인원</label>
+      <div class="content">{{submitCont.person}}명</div>
+    </div>
+    <div class="list">
+      <label>설치 견적비용</label>
+      <div class="content">{{ numFormat(submitCont.price) }}만원</div>
+    </div>
+    <div class="list" *ngIf="hasContInfo('module_name')">
+      <label>태양광 모듈</label>
+      <div class="content">{{ submitCont.module_name }}</div>
+    </div>
+    <div class="list" *ngIf="hasContInfo('inv_name')">
+      <label>인버터</label>
+      <div class="content">{{ submitCont.inv_name }}</div>
+    </div>
+    <div class="list" *ngIf="hasContInfo('quality')">
+      <label>구조물 제품명</label>
+      <div class="content">{{ submitCont.quality }}</div>
+    </div>
+    <div class="list" *ngIf="hasContInfo('module_guarent')">
+      <label>모듈 보증 내용</label>
+      <div class="content">{{ submitCont.module_guarent }}</div>
+    </div>
+    <div class="list" *ngIf="hasContInfo('inv_guarent')">
+      <label>인버터보증 내용</label>
+      <div class="content">{{ submitCont.inv_guarent }}</div>
+    </div>
+    <div class="list">
+      <label>보증기간 및 A/S안내</label>
+      <div class="content">{{ submitCont.as_guide }}</div>
+    </div>
+    <div class="list double">
+      <label>최종 소비자가격<br/>(부가세 포함 가격)</label>
+      <div class="content mt10">{{ numFormat(submitCont.final_price) }}원</div>
+    </div>
+  </div>
+
+  <div class="no-data mt30" *ngIf="!hasData()">
+    <h3>로딩중입니다...</h3>
+  </div>
+</ion-content>

@@ -1,0 +1,77 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">고객센터</span>
+      <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="banner">
+    <img class="avartar" src="assets/imgs/logoonly.png">
+  </div>
+  
+  <div class="wrap cont_1">
+    <img style="width:30%; margin-top:1.5em; " src="assets/imgs/solamyonly.png">
+    <p class="mt10">Solamy와 카카오톡 친구가 되세요.</p>
+    <p class="mt1">친구 추가시 업무진행이 편리합니다</p>
+    <div (click)="connectToKakao()" class="kakao">
+      <label style="font-size: 14px;
+      line-height: 2.5em;">카카오톡 아이디 solarmy365</label>
+    </div>
+  </div>
+  
+  <div style="
+  height: 180px;" class="wrap cont_2">
+    <div class="phone">
+      <img src="assets/imgs/customerearphone.png">
+    </div>
+    <h3 class="mt10">고객센터 전화연결</h3>
+    <p class="mt1">전화 업무상담은 오전 10시에서 오후6시까지 운영합니다.</p>
+    <div class="phone-num">070.764.2221</div>
+    <button style="   
+    text-align: center;
+    background: #e15a00;
+color: white;
+width: 75%;
+ 
+border-radius: 10px;
+margin-left: -0.5em;
+    -webkit-box-shadow: none !important;
+    " ion-button color="light"  (click)="phonecall()">전화연결하기</button>
+  </div>
+  <div style="    height: auto !important;" class="wrap cont_2">
+  <ion-grid class="p0 ion-grid bottom">
+    <ion-row class="btn-cont">
+      <ion-col col-6 class="service_intro" (click)="compareQuo()">
+        <div style="    margin-top: 1em;" class="text-center">
+          <img style="width:24px; height:24px;" src="assets/imgs/bar-chartblack.png">
+          <h6>비교견적안내</h6>
+        </div>
+      </ion-col>
+      <ion-col style="    margin-top: 0.5em;" col-6 class="service_intro" (click)="government()">
+        <div style="
+        margin-top: 0.5em;" class="text-center">
+            <img style="width:24px; height:24px;" src="assets/imgs/homeblack.png">
+          <strong style="display:block;">가정용 태양광 <br>정부주택지원 사업</strong>
+        </div>
+      </ion-col>
+      <ion-col style="    margin-top: 1em;" col-6 class="cutomer_center" (click)="generator()">
+        <div class="text-center">
+            <img style="width:24px; height:24px;" src="assets/imgs/energyblack.png">
+          <h6>수익형발전소(RPS)</h6>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer-cont">
+    <h3>© 솔라미</h3>
+    <p>통신판매업신고: 제20129-경기포천-19129호</p>
+    <img src="assets/imgs/footer_logo.png">
+  </div>
+</ion-footer>

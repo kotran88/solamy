@@ -1,0 +1,207 @@
+page-analyse-result {
+    ion-content {
+        font-weight: bold;
+    }
+    .scroll-content{
+        background: #eff2f3;
+    }
+    // .top-wrap {
+    //     width: 100%;
+    // }
+    // .top-wrap img {
+    //     width: 100%;
+    // }
+    h3.address {
+        font-size: 16px;
+        color: #555;
+        letter-spacing: -1px;
+        padding: 10px 10px 10px 20px;
+        border-bottom: 2px solid #CCCCCC;
+        font-weight: bold;
+    }
+    h3.address img {
+        width: 15px;
+        vertical-align: top;
+        margin-right: 5px;
+    }
+    div.title {
+        font-size: 15px;
+        padding: 5px;
+        line-height: 20px;
+    }
+    .title.fee {
+        color: #FFA200;
+    }
+    .title.module {
+        color: #DCAF0C;
+    }
+    .title.carborn img {
+        vertical-align: sub;
+    }
+    // .wrap {
+    //     padding: 20px;
+    //     padding-top: 10px;
+    // }
+    // .wrap div {
+    //     border-bottom: 1px solid #CCCCCC;
+    // }
+    // .wrap div.content {
+    //     padding: 10px;  
+    //     font-size: 13px;
+    // }
+    // .wrap .content span {
+    //     float: right;
+    //     text-align: right;
+    //     font-size: 20px;
+    //     line-height: 17px;
+    //     letter-spacing: -1px;
+    // }
+    .wrap2 .description {
+        padding: 15px;
+        text-align: center;
+        .blue{
+            color:"color:#247ccd";
+        }
+    }
+    .wrap2 .description p {
+        font-size: 13px;
+    }
+    .wrap2 .description h3 {
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 3px;
+    }
+    .wrap2 .description h3 span {
+        font-size: 15px;
+        vertical-align: middle;
+    }
+    // .gray {
+    //     color: #555;
+    // }
+    // .yellow {
+    //     color: #DCAF0C;
+    // }
+    // .light-blue {
+    //     color: #3AAA9C;
+    // }
+    // .blue {
+    //     color: #3A83C7;
+    // }
+    // .deep-green {
+    //     color: #0C6A12;
+    // }
+    // h3.admin {
+    //     min-height: 100px;
+    // }
+    .top-wrap {
+        height: 140px;
+    }
+    .top-wrap .img-wrap img {
+        width: 80px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+    .top-wrap h3 {
+        margin-top: 5px!important;
+        font-size: 16px;
+        font-weight: 700;
+        color: #555;
+        letter-spacing: -1px;
+    }
+    .border-cont {
+        border-top: 3px solid #eee;
+        margin-top: 4px;
+    }
+    // 
+    ion-grid {
+
+    width: 90% !important;
+    margin-top: 1em;
+    background: white;
+    border-radius: 20px 20px 20px 20px;
+        border-bottom:0px !important;
+    }
+    ion-grid ion-col {
+        padding: 0 !important;
+    }
+    ion-grid .wrap {
+        padding: 20px;
+    }
+    ion-grid .wrap .date {
+        color: #147cdd;
+        font-size: 13px;
+    }
+    ion-grid .wrap .contract {
+        color: #f10909;
+        font-size: 13px;
+    }
+    ion-grid .wrap div {
+        color: #555555;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 10px;
+        text-indent: -14px;
+        padding-left: 14px;
+        
+    }
+    .btn-cont div {
+        width: 100%;
+        float: left;
+        padding: 15px;
+        color: #fff;
+        height: 50px;
+        text-align: center;
+        font-weight: 700;
+    }
+    .btn-cont div img {
+        width: 16px;
+        vertical-align: top;
+        margin-top: 1px;
+        margin-right: 10px;
+    }
+    .btn-cont div.analyseBtn {
+        background: #247ccd;
+        border-radius: 20px 20px 0 0;
+    }
+    .btn-cont div.process {
+        background: #2E58A2;
+
+    border-radius: 0 0 20px 0;
+    }
+    
+    // btns
+    .btn-client {
+        width: 100%;
+        text-align: center;
+        margin: 20px auto;
+    }
+    .btn-client .analyseClient {
+        margin: 0 auto;
+        border-radius: 10rem;
+        font-size: 15px;
+        color: #FFF;
+        height: 45px;
+        background: #3A83C7;
+        width: 90%;
+    }
+    .btn-client .analyseClient img {
+        width: 20px;
+        margin-right: 10px;
+    }
+
+
+    .no-data {
+        h3 {
+            font-size: 20px;
+            color: #476AAC;
+            margin: 100px 0 30px !important;
+            font-weight: bold;
+        }
+        p {
+            font-weight: bold;
+            font-size: 14px;
+            color: #555;
+        }
+    }
+    
+}

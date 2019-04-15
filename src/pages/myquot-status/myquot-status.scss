@@ -1,0 +1,106 @@
+page-myquot-status {
+    // tab
+    .scroll-content{
+        background:#eff2f3;
+    }
+    ion-segment {
+        position: absolute;
+        top: 50px;
+        z-index: 1;
+        background: #ffffff;
+    }
+    .segment-md .segment-button {
+        height: 50px;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 56px;
+        border-bottom: 2px solid #ccc;
+        letter-spacing: -1px;
+    }
+    .segment-md .segment-button.double {
+        line-height: 18px;
+        padding-top: 10px;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        color:white;
+        border-color:#e15a00 !important;
+        background:#e15a00 !important;
+    }
+    .scroll-content, .fixed-content {
+        margin-top: 100px !important;        
+    }
+    .list-md {
+        margin-top: 0;
+    }
+    .segment-md .segment-button.segment-activated{
+
+    }
+    .quotation{
+        border-radius: 0 0 20px 20px;
+        background-color:#e97e00 !important;
+    }
+    // 요청 견적 list
+    ion-grid {
+        background: white;
+        width: 90% !important;
+        margin-top:1em !important;
+        margin: auto;
+        border-radius: 20px;
+    }
+    ion-grid ion-col {
+        padding: 0 !important;
+    }
+    ion-grid .wrap {
+        padding: 20px;
+    }
+    ion-grid .wrap .date {
+        color: black;
+        font-size: 13px;
+    }
+    ion-grid .wrap .contract {
+        color: #e15a00;
+        font-size: 13px;
+    }
+    ion-grid .wrap div {
+        color: #555555;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 5px;
+        text-indent: -15px;
+        padding-left: 15px;
+    }
+    .btn-cont div {
+        width: 100%;
+        float: left;
+        padding: 15px;
+        color: #fff;
+        height: 50px;
+        text-align: center;
+        font-weight: 700;
+    }
+    .btn-cont div img {
+        width: 16px;
+        vertical-align: top;
+        margin-top: 1px;
+        margin-right: 10px;
+    }
+    .btn-cont div.quotation {
+        background: #e15a00;
+    }
+    .btn-cont div.processStatus {
+        background: #e15a00;
+    }
+    // 계약 contract
+    h3.tip {
+        text-align: center;
+        margin-top: 100px;
+        color: #555;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .ml13 { margin-left: 13px; }
+    .red {
+        color: red;
+    }
+}

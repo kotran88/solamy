@@ -1,0 +1,113 @@
+
+<ion-header>
+  <div class="top_bar">
+    <span class="title">진행현황</span>
+    <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="hasData()">
+    <div class="wrap wrap_1">
+      <h3 class="title">계약 정보</h3>
+      
+      <div class="list">
+        <label>고객명</label>
+        <div class="content">{{submitCont.name}}</div>
+      </div>
+      <div class="list cont">
+        <label>계약금</label>
+        <div class="content">{{ numFormat(submitCont.cont_price) }}원</div>
+      </div>
+      <div class="list cont">
+        <label>결제금액</label>
+        <div class="content">{{ numFormat(submitCont.price - submitCont.cont_price) }}원</div>
+      </div>
+      <div class="list cont">
+        <label>총금액</label>
+        <div class="content">{{ numFormat(submitCont.price) }}원</div>
+      </div>
+      <div class="list cont">
+        <label>고객 설치 희망일</label>
+        <div class="content">{{ returnData(submitCont.ins_hope_time, 'day') }}</div>
+      </div>
+        
+      <div class="list cont" *ngIf="!isContract()">
+        <label>설치예정일</label>
+        <div class="content" (click)="calendarEx()">
+          <p>{{ins_exp_time}} <img src="assets/imgs/calendar.png" width="15" /> </p>
+        </div>
+      </div>
+      <div class="list" *ngIf="isContract()">
+        <label>설치예정일</label>
+        <div class="content">{{ins_exp_time}}</div>
+      </div>
+      <div class="list cont" *ngIf="!isContract()">
+        <label>설치완료일</label>
+        <div class="content" (click)="calendarComp()">
+          <p>{{ins_comp_time}} <img src="assets/imgs/calendar.png" width="15" /> </p>
+        </div>
+      </div>
+      <div class="list" *ngIf="isContract()">
+        <label>설치완료일</label>
+        <div class="content">{{ins_comp_time}}</div>
+      </div>
+
+      <div class="list double" *ngIf="!isContract()">
+        <label>계약서</label>
+        <div class="content"><button ion-button (click)="viewContract()" class="viewContract">계약서 보기</button></div>
+      </div>
+
+      <div class="contract btn-cont" *ngIf="!isContract()">
+        <div class="text-center">
+          <ion-checkbox id="contract" (click)="agreeContract()"></ion-checkbox>
+          <ion-label for="contract">계약서 내용을 확인하였으며, 계약체결을 진행합니다.</ion-label> 
+        </div>
+        <button ion-button color="light" disabled *ngIf="!isTerm()" class="boxBtn contract">계약하기</button>
+        <button ion-button color="light" (click)="setContract()" *ngIf="isTerm()" class="boxBtn contract">계약하기</button>
+      </div>
+      <div class="contract btn-cont" *ngIf="isContract()">
+        <p>{{contract_time}}</p>
+        <h6>계약이 완료되었습니다.</h6>
+        <button ion-button class="viewContract mt10" (click)="viewContract()">계약서 보기</button>
+      </div>
+    </div>
+    
+    <div class="middle" *ngIf="isContract()"></div>
+    <div class="wrap wrap_2" *ngIf="isContract()">
+      <h3 class="title">결제 정보</h3>
+      
+      <div class="list">
+        <label>결제금액</label>
+        <div class="content">{{ numFormat(submitCont.price - submitCont.cont_price) }}원</div>
+      </div>
+      <div class="contract btn-cont" *ngIf="!hasPay()">
+        <h6>결제전입니다.</h6>
+      </div>
+      <div class="contract btn-cont" *ngIf="hasPay()">
+        <p>{{ returnData(pay_time, 'min') }}</p>
+        <h6>결제가 완료되었습니다.</h6>
+      </div>
+    </div>
+    
+    <div class="middle" *ngIf="hasRating()"></div>
+    <div class="wrap wrap_2" *ngIf="hasRating()">
+      <h3 class="title b-none">고객 평가</h3>
+      
+      <div class="contract btn-cont">
+        <ul class="rating">
+          <li><img [src]="imgUrl[0]" ></li>
+          <li><img [src]="imgUrl[1]" ></li>
+          <li><img [src]="imgUrl[2]" ></li>
+          <li><img [src]="imgUrl[3]" ></li>
+          <li><img [src]="imgUrl[4]" ></li>
+        </ul>
+        <h6 class="thanks">{{ custom_replay }}</h6>
+      </div>
+      
+    </div>
+  </div>
+  <div class="no-data mt30" *ngIf="!hasData()">
+    <h3>로딩중입니다...</h3>
+  </div>
+</ion-content>

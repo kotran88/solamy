@@ -1,0 +1,54 @@
+
+<ion-content class="container">
+  <!-- <img src="assets/imgs/login/bg.png" class="background"/> -->
+  <div class="logo-cont">
+      <div class="wrap">
+        <img class="bg" src="assets/imgs/solarmy_logo.png">
+      </div>
+    </div>
+  <div class="form">
+    <ion-list>
+      <ion-item>
+        <ion-label style="font-size: 16px;
+        color: white;" floating>이메일</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
+    
+      <ion-item class="mt10">
+        <ion-label style="font-size: 16px;
+        color: white;"  floating>비밀번호</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+      <span></span>
+    </ion-list>
+
+    <div class="item check-cont mt10">
+      <div class="f-left itemEtc">
+        
+        <ion-checkbox [(ngModel)]="saveId" id="saveId"></ion-checkbox>
+        <ion-label for="saveId">아이디 저장</ion-label>
+        <ion-checkbox [(ngModel)]="savePass" class="ml10"></ion-checkbox>
+        <ion-label>비밀번호 저장</ion-label>
+        
+      </div>
+     
+    </div>
+    <div class="item btn-cont">
+      <a style="color:white;" (click)="login()" class="boxBtn login">
+        <img style="width: 14px;
+        height: 14px;" class="mark" src="assets/imgs/lock-open.png">&nbsp;
+  로그인</a>
+      <div class="f-right itemEtc">
+          <p style="    position: absolute;
+          left: 10%;
+      " class="text-center mt10"><a class="txtBtn" (click)="findPass()" for="findPass"  >비밀번호 찾기</a></p>
+          <p class="text-center mt10"><a class="txtBtn" (click)="registerPage()" >회원가입</a></p>
+    
+        </div>
+     
+      <!-- <a (click)="naverLogin()" class="boxBtn mt30 naver">네이버 로그인</a> -->
+      <a (click)="kakaotalkLogin()" class="boxBtn mt30 kakao">카카오톡 연결하기</a>
+    </div>
+  </div>
+  
+</ion-content>

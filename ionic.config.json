@@ -1,0 +1,8 @@
+{
+  "name": "solami",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

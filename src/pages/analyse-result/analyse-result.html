@@ -1,0 +1,165 @@
+
+<ion-header>
+  <div class="top_bar">
+      <span class="title">분석결과</span>
+      <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+  
+<ion-content padding>
+  <div *ngIf="hasAnResult()">
+    <div class="top-wrap">
+      <img style="width: 100%;
+      height: 140px;"
+      src="{{roof_path}}" >
+    </div>
+    <h3 class="address">
+      <img src="assets/imgs/analyse/area.png"> {{ address }}
+    </h3>
+
+    <ion-grid class="p0 ion-grid" >
+      <ion-row>
+        <ion-col col-12>
+            <div class="btn-cont">
+                <div class="analyseBtn" (click)="analyseResult(item.id)">
+                  <img src="assets/imgs/analyse_result.png">전기료 감면효과
+                </div>
+              </div>
+          <div class="wrap">
+              <div style="    margin-top: 3.5em;" class="content gray">
+                  우리집 월평균 전기요금 <span style="color:#247ccd; float: right;">{{ numFormat('month_fee') }}</span>
+                </div>
+                <div class="content yellow">
+                  전기료 예상 절감액 <span style="color:#247ccd; float: right;">- {{ numFormat('sale_fee') }}</span>
+                </div>
+                <div class="content light-blue">
+                  설치후 전기요금 <span style="color:#247ccd; float: right;">{{ numFormat('elect_fee') }}</span>
+                </div>
+               
+          </div>
+          <div style="background-color: #f6f6f6;     color: #247ccd;
+        " class="wrap2">
+              <div class="description blue">
+                  <p>20년간 누적 예상 전기요금 절감액</p>
+                  <h3> {{ numFormat('expect_elect_fee') }} <span>만원</span> </h3>
+                </div>
+          </div>
+  
+         
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="p0 ion-grid" >
+        <ion-row>
+          <ion-col col-12>
+              <div class="btn-cont">
+                  <div style="background:#e97e00" class="analyseBtn" (click)="analyseResult(item.id)">
+                    <img src="assets/imgs/analyse_result.png"> 태양광 최적 설치 정보
+                  </div>
+                </div>
+            <div class="wrap">
+                <!-- <div style=" margin-top: 3.5em;" class="content gray">
+                  <div  class="analyseBtn" (click)="analyseResult(item.id)">
+                    우리집 월평균 전기요금 <span style="color:#e97e00;float: right;">{{ numFormat('month_fee') }}</span>
+                  </div>
+                  <div class="content yellow">
+                    전기료 예상 절감액 <span style="color:#e97e00;float: right;">- {{ numFormat('sale_fee') }}</span>
+                  </div>
+                  <div class="content light-blue">
+                    설치후 전기요금 <span style="color:#e97e00;float: right;">{{ numFormat('elect_fee') }}</span>
+                  </div>
+                 </div> -->
+                 <div style=" margin-top: 3.5em;" class="content gray">
+                    태양광 최적 설치 용량 <span style="color:#e97e00;float: right;" class="blue">{{ numFormat('solar_power') }}kw</span>
+                  </div>
+                  <div class="content gray">
+                    최적각도 <span style="color:#e97e00;float: right;" class="blue">{{ numFormat('opt_angle') }}도</span>
+                  </div>
+                  <div class="content gray">
+                    월간 예상 평균 발전량 <span style="color:#e97e00;float: right;" class="blue">{{ numFormat('month_expect_power') }}kw</span>
+                  </div>
+                  <div class="content gray">
+                    20년간 누적 예상 발전량 <span style="color:#e97e00;float: right;" class="blue">{{ numFormat('expect_power') }}kw</span>
+                  </div>
+            </div>
+           
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="p0 ion-grid" >
+          <ion-row>
+            <ion-col col-12>
+                <div class="btn-cont">
+                    <div style="background: #7da808" class="analyseBtn" (click)="analyseResult(item.id)">
+                      <img src="assets/imgs/analyse_result.png">탄소저감효과
+                    </div>
+                  </div>
+                  <div class="wrap2">
+                      <div style="margin-top: 3.5em;" class="description blue">
+                          <p style="    font-size: 16px;" class="gray">30년생 소나무 심는 효과(20년간 누적 기준)</p>
+                          <h3 class="deep-green" style="color:#7da808"> <img src="assets/imgs/analyse/tree.png" class="ml2" width="18"> {{ numFormat('tree_effect') }} <span>그루</span> </h3>
+                        </div>
+                        <div class="description blue">
+                          <p style="    font-size: 16px;" class="gray">CO2 탄소 저감 효과(20년간 누적 기준)</p>
+                          <h3 class="blue" style="color:#7da808"> <img src="assets/imgs/analyse/lamp.png" class="ml2" width="14"> {{ numFormat('co_pexpect') }} <span>톤</span> </h3>
+                        </div>
+                  </div>
+                 
+      
+             
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+      <ion-grid class="p0 ion-grid" >
+        <ion-row>
+          <ion-col col-12>
+              <div class="btn-cont">
+                  <div style="background:#8b8b8b" class="analyseBtn" (click)="analyseResult(item.id)">
+                    <img src="assets/imgs/analyse_result.png">기타사항
+                  </div>
+                </div>
+                <div   class="wrap2">
+                    <div class="description blue">
+                        <p class="gray"> {{ etc }}</p>
+                      </div>
+                </div>
+               
+                
+    
+           
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+    <!-- <div class="wrap">
+      <div class="title module">
+        <img src="assets/imgs/analyse/module.png" width="20"> 태양광 최적 설치 정보
+      </div>
+     
+    </div>
+
+    <div class="wrap">
+      <div class="title module carborn">
+        <img src="assets/imgs/analyse/carborn-sale.png" width="20"> 탄소저감효과
+      </div>
+      <div class="description blue">
+        <p class="gray">30년생 소나무 심는 효과</p>
+        <h3 class="deep-green"> <img src="assets/imgs/analyse/tree.png" class="ml2" width="18"> {{ numFormat('tree_effect') }} <span>그루</span> </h3>
+      </div>
+      <div class="description blue">
+        <p class="gray">CO2 탄소 저감 효과</p>
+        <h3 class="blue"> <img src="assets/imgs/analyse/lamp.png" class="ml2" width="14"> {{ numFormat('co_pexpect') }} <span>톤</span> </h3>
+      </div>
+    </div> -->
+
+  </div>
+
+  <div class="no-data text-center" *ngIf="!hasAnResult()">
+    <h3>분석 진행중입니다.</h3>
+    <p>
+      24시간 내에 (영업시간 기준) 분석 요청하신 <br/>
+      자료를 받아 보실 수 있습니다.
+    </p>
+  </div>
+</ion-content>

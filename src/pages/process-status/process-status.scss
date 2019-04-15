@@ -1,0 +1,318 @@
+page-process-status {
+    // tab
+    ion-segment {
+        position: absolute;
+        top: 50px;
+        z-index: 1;
+        background: #ffffff;
+    }
+    .segment-md .segment-button {
+        height: 50px;
+        color: #666666;
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 56px;
+        border-bottom: 2px solid #ccc;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        background-color:#e15a00;
+        border-color:#e15a00 !important;
+        color: white;
+        
+    }
+    .scroll-content, .fixed-content {
+        margin-top: 100px !important;   
+        background-color:#eff2f3;     
+    }
+    // 
+    .list-md {
+        margin-top: 0;
+    }
+   
+    .selected{
+        width: 90%;
+        border-bottom:0px !important;
+        // border: solid 2px #e15a00 !important;
+        border: solid 3px #e15a00 !important;
+          border-radius: 10px;
+          
+        margin: auto;
+        margin-top: 15px;
+       
+    }
+    .lo{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+    }
+    .item-button{
+        padding: 0 0.6em;
+        height: 25px;
+        font-size: 1.2rem;
+        background: black !important;
+        color: white !important;
+        border: solid 1px black !important;
+        border-radius: 5px !important;
+    }
+    .noselected{
+        width: 90%;
+        margin: auto;
+        margin-top: 15px;
+    }
+    ///////////// 업체선청 /////////////
+    h3.title {
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+        padding: 30px 15px 15px 20px;
+        border-bottom: 2px solid #eeeeee;
+        letter-spacing: -1px;
+        line-height: 16px;
+    }
+    ion-item {
+        border-bottom: 1px solid #dedede !important;
+        padding-left: 20px !important;
+    }
+    ion-item, ion-item h2, ion-item h3 { font-weight: bold!important; color: #333333; }
+    ion-item p {
+        font-weight: normal;
+    }
+    ion-item .item-inner {
+        border: none !important;
+    }
+    ion-thumbnail {
+        line-height: 80px;
+        color: black;
+        margin: 5px 16px 5px 0;
+    }
+    ion-label {
+        margin: 10px 8px 10px 0;
+    }
+    ion-item input[type="radio"] {
+        vertical-align: middle;
+    }
+    ion-item button {
+        border: 1.5px solid #e15a00 !important;
+        border-radius: 10rem !important;
+        background: none !important;
+        padding: 9px !important;
+        width: 100px !important;
+        height: 34px !important;
+        color: #e15a00 !important;
+        font-size: 12px !important;
+        font-weight: bold !important;
+    }
+    // no company
+    .no-company {
+        letter-spacing: -1px;
+    }
+    .no-company .complain {
+        font-weight: 500;
+        font-size: 13px;
+        margin: 50px 0 30px 0;
+    }
+    .no-company .content {
+        background: #DEEBF7;
+        padding: 20px;
+        text-align: left;
+    }
+    .no-company h3 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .no-company p {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 13px;
+        text-indent: -10px;
+        padding-left: 10px;
+    }
+    // btns
+    .btn-cont {
+        width: 100%;
+        text-align: center;
+    }
+    .btn-cont .analyseClient {
+        margin: 0 auto;
+        border-radius: 5px;
+        font-size: 15px;
+        color: #333;
+        height: 45px;
+        background: #FFA200;
+        width: 90%;
+    }
+    .btn-cont.client h3 {
+        color: #555555;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        letter-spacing: -1px;
+    }
+    .btn-cont.client .analyseClient {
+        color: #FFF;
+    }
+    /////////////// 계약 및 결제 /////////////
+    .wrap {
+        padding: 10px 20px 10px;
+    }
+    .wrap_1 {
+        box-shadow: 1px 2px 3px #cccccc;
+    }
+    .wrap_2{
+        padding-top: 10px;
+    }
+    .middle {
+        width: 100%;
+        height: 5px;
+        border-top: 5px solid #eee;
+        margin-top: 3px;
+    }
+    // 
+    .contract h3.title {
+        padding: 11px 15px 11px 0px;
+        line-height: 14px;
+    }
+    .wrap .list {
+        padding: 10px;
+        height: 40px;
+        border-bottom: 1px solid #ddd;
+    }
+    .wrap .list.cont {
+        height: 50px;
+        padding: 16px 10px;
+    }
+    .wrap .list label {
+        width: 100px;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: bold;
+        color: #999;
+        float: left;
+    }
+    .wrap .list .content {
+        width: calc(100% - 130px);
+        color: #555;
+        font-size: 13px;
+        display: inline-block;
+    }
+    .wrap .list .content p {
+        font-size: 13px;
+        font-weight: 500;
+        width: 100px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ccc;
+    }
+    .wrap .list .content p img {
+        margin-left: 10px;
+        vertical-align: bottom;
+    }
+    .wrap .list .content button,
+    .wrap .contract.btn-cont button.viewContract {
+        border-radius: 5px;
+        background: none;
+        padding: 9px;
+        width: 50%;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        position: relative;
+        top: -14px;
+        background: black;
+    }
+    .wrap .contract.btn-cont {
+        padding: 15px 0 0;
+    }
+    .wrap .contract.btn-cont input {
+        vertical-align: text-bottom;
+    }
+    .wrap .contract.btn-cont label,
+    .wrap .contract.btn-cont ion-label {
+        font-size: 11px;
+        letter-spacing: -1px;
+        color: #555;
+    }
+    .wrap ion-checkbox.checkbox-md .checkbox-checked .checkbox-inner {
+        left: 5px;
+    }
+    .wrap .contract.btn-cont button.contract{
+        margin: 0;
+        border-radius: 10px;
+        font-size: 17px;
+        color: white;
+        height: 45px;
+        background: #e15a00;
+        margin-top: 10px;
+        width: 100%;
+    }
+    // 
+    .wrap .contract.btn-cont p {
+        font-size: 12px;
+        color: #ccc;
+    }
+    .wrap .contract.btn-cont {
+        .textarea {
+            height: 150px;
+            color: #555;
+            width: 100%;
+            border: 1px solid #dedede !important;
+            font-size: 14px;
+            border-radius: 3px;
+            padding: 5px;
+        }
+        .textarea:focus {
+            border-bottom: 1px solid #FFA200;
+            box-shadow: inset 0 -1px 0 0 #FFA200;
+        } 
+        .textarea::placeholder {
+            color: #a5a3a3;
+            font-size: 12px;
+        }
+    }
+    .wrap .viewContract .button-inner {
+        font-size: 13px;
+        letter-spacing: -1px;
+    }
+    // rating
+    .wrap .contract .rating {
+        width: 100%;
+        text-align: center;
+    }
+    .wrap .contract .rating li {
+        display: inline-block;
+        margin-left: 5px;
+    }
+    .wrap .contract .rating li img {
+        width: 25px;
+    }
+    // bottom 
+    .bottom {
+        padding: 20px 0;
+        height: 60px;
+    }
+    .bottom .logo {
+        width: 30%;
+        float: left;
+        text-align: center;
+    }
+    .bottom .logo img {
+        width: 50px;
+    }
+    .bottom .right-wrap {
+        width: 70%;
+        float: left;
+    }
+    .bottom .right-wrap p {
+        font-size: 11px;
+        color: #555;
+        letter-spacing: -1px;
+    }
+    .bottom .right-wrap h6 {
+        font-size: 13px;
+        color: #555;
+        margin-top: 5px;
+        font-weight: bold;
+        letter-spacing: -1px;
+    }
+}

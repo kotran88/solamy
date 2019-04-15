@@ -1,0 +1,68 @@
+
+<ion-header>
+  <div class="top_bar">
+    <span class="title">분석 의뢰하기</span>
+    <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+  
+  <div class="form mt30">
+    <div class="alert-md">
+      <label>이메일</label>
+      <div  class="alert-input"> {{ email }} </div>
+    </div>
+    <div class="alert-md">
+      <label>성명</label>
+      <input style="    padding-top: 0;
+      padding-bottom: 0;" type="text" class="alert-input" [(ngModel)]="name"/>
+    </div>
+    <div class="alert-md">
+      <label>주소</label>
+      <input type="text" class="alert-input address" disabled value="{{postCode}}" />
+      <button style="color: white;
+      background: black;
+      border-radius: 5px;" ion-button color="light" (click)="toggleSearchPop()">주소검색</button>
+    </div>
+    <div class="alert-md">
+      <label></label>
+      <input style="    padding-top: 0;
+      padding-bottom: 0;" type="text" class="alert-input" disabled value="{{address}}"/>
+    </div>
+    <div class="alert-md">
+      <label></label>
+      <input style="    padding-top: 0;
+      padding-bottom: 0;" *ngIf="building==''" placeholder="상세주소를 입력" type="text" class="alert-input"  value="{{building}}"/>
+       <input style="    padding-top: 0;
+       padding-bottom: 0;" *ngIf="building!=''" type="text" class="alert-input"  value="{{building}}"/>
+    </div>
+    <div class="alert-md">
+      <label>연락처</label>
+      <input type="number" class="alert-input" [(ngModel)]="contact" placeholder="‘-’제외하고 숫자만 입력"/>
+    </div>
+    <div class="alert-md double">
+      <label>월평균 전기요금</label>
+      <input type="text" class="alert-input" [(ngModel)]="month_fee" />
+    </div>
+    
+    <div class="btn-cont">
+      <button ion-button color="light" (click)="analyseClient()" class="boxBtn analyseClient"><img src="/assets/imgs/bar-chart.png">분석 의뢰하기</button>
+    </div>
+  
+  </div>
+</ion-content>
+
+<div *ngIf="isSearch()" class="search">
+  <div (click)="toggleSearchPop()" class="bg"></div>
+  <div class="result-wrap">
+    <div class="top-area etcForm">
+      <ion-searchbar [(ngModel)]="input_address" (ionInput)="searchAddress()" placeholder="주소를 입력해 주세요."></ion-searchbar>
+    </div>
+    <ul *ngIf="!isSearchVal()" class="result">
+      <li>주소를 상세히 입력해 주세요.</li>
+    </ul>
+    <ul class="result" id="search_list">
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+page-service-intro {
+    .scroll-content{
+        background:#eff2f3;
+    }
+    ion-segment {
+        position: absolute;
+        top: 48px;
+        z-index: 99999999999999;
+        background: #ffffff;
+    }
+    .segment-md .segment-button {
+        height: 50px;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 56px;
+        border-bottom: 2px solid #ccc;
+        letter-spacing: -1px;
+    }
+    .title{
+        color: black;
+    padding: 10px 16px 0px 16px;
+    }
+    .subtitle{
+        padding: 0px 16px 0px 16px;
+    }
+    .ttt{
+        padding: 10px 16px 0px 16px;
+    }
+    .tt{
+        font-family: ProximaNova;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 600;
+
+        padding: 16px;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
+        border-color:#e15a00 !important;
+    }
+    .img{
+        padding:16px;
+    }
+    .segment-md .segment-button.double {
+        line-height: 18px;
+        padding-top: 10px;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        background:#e15a00;
+        color:white
+    }
+    .scroll-content, .fixed-content {
+        margin-top: 100px !important;        
+    }
+    .auth-cont{
+        text-align: center;
+    }
+    .table{
+        width: 50px;
+        height: 50px;
+        display: -webkit-box;
+    width: 100%;
+    padding:5px;
+    vertical-align: middle;
+        span{
+            font-size:17px !important;
+        }
+    }
+    .table img{
+        width: 50px;
+    height: 50px;
+    padding: 5px;
+    vertical-align: middle;
+    }
+    // 
+    .list-md {
+        margin-top: 0;
+    }
+    .quotation{
+        border-radius: 0 0 20px 20px;
+    }
+    // 요청 견적 list
+    ion-grid {
+        background: white;
+        width: 90% !important;
+        margin-top:1em !important;
+        margin: auto;
+        border-radius: 20px;
+    }
+    ion-grid ion-col {
+        padding: 0 !important;
+    }
+    ion-grid .wrap {
+        padding: 20px;
+    }
+    ion-grid .wrap .date {
+        color: #147cdd;
+        font-size: 13px;
+    }
+    ion-grid .wrap .contract {
+        color: #f10909;
+        font-size: 13px;
+    }
+    ion-grid .wrap div {
+        color: #555555;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 5px;
+        text-indent: -15px;
+        padding-left: 15px;
+    }
+    .btn-cont div {
+        width: 100%;
+        float: left;
+        padding: 15px;
+        color: #fff;
+        height: 50px;
+        text-align: center;
+        font-weight: 700;
+    }
+    .btn-cont div img {
+        width: 16px;
+        vertical-align: top;
+        margin-top: 1px;
+        margin-right: 10px;
+    }
+    .btn-cont div.quotation {
+        background: #3AAA9C;
+    }
+    .btn-cont div.processStatus {
+        background: #2E58A2;
+    }
+    // 계약 contract
+    h3.tip {
+        text-align: center;
+        margin-top: 100px;
+        color: #555;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .ml13 { margin-left: 13px; }
+    .red {
+        color: red;
+    }
+}

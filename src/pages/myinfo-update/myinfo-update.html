@@ -1,0 +1,108 @@
+
+<ion-header>
+  <div class="top_bar">
+    <span class="title">내정보 업데이트</span>
+    <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-content padding>
+<!-- 
+  <div class="top-wrap">
+    <h6>회원정보를 입력하셔야 견적에 참여하실 수 있습니다.</h6>
+    <button ion-button class="charge-guide" (click)="chargeGuidePage()">이용요금 안내</button>
+  </div>
+  <div class="border-cont"></div> -->
+
+  <div class="form">
+   
+    <div class="alert-md">
+      <label style="">이메일</label>
+      <div class="alert-input"> {{ email }} </div>
+    </div>
+    <div class="alert-md">
+      <label><span>*</span> 회사명</label>
+      <input style="width: 100%;" type="text" class="alert-input" [(ngModel)]="comp_name"/>
+    </div>
+    <div class="alert-md">
+      <label><span>*</span> 주소</label>
+      <input type="text" class="alert-input address"  value="{{postCode}}" />
+      <button ion-button color="light" (click)="toggleSearchPop()">주소검색</button>
+    </div>
+    <div style="height: 30px;" class="alert-md">
+      <input style="width: 100%;" type="text" class="alert-input" disabled value="{{address}}"/>
+    </div>
+    <div style="height: 30px;" class="alert-md">
+      <input style="width: 100%;" type="text" class="alert-input"  value="{{building}}"/>
+    </div>
+    <div style="margin-top:1em; " class="alert-md">
+      <label>담당자</label>
+      <input style="width:100%;" type="text" class="alert-input" [(ngModel)]="clerk"/>
+    </div>
+    <div class="alert-md">
+      <label><span>*</span> 연락처</label>
+      <input  style="width:100%;" style="width: 100%;" type="number" class="alert-input" [(ngModel)]="contact" placeholder="‘-’제외하고 숫자만 입력"/>
+    </div>
+    <div class="alert-md">
+      <label>전화번호</label>
+      <input style="width:100%;" type="number" class="alert-input" [(ngModel)]="hp_num" placeholder="‘-’제외하고 숫자만 입력"/>
+    </div>
+    <!--  -->
+    <div class="alert-md mt20 double">
+      <label>전기면허 </label>
+      <span style="top: 5px;" class="file-name">{{elect_name}}</span>
+      <img style="
+      margin-top: 10px !important;" src="assets/imgs/cancel.png" class="btn-cancel" width="10" *ngIf="hasImg(old_elect_url, elect_url)" (click)="delImage('elect')">
+      <button style="margin-right: 15px;
+      right: 0px;
+      position: absolute;" ion-button color="light" (click)="clickGallery('elect')">업로드</button>
+      <div class="hrline"></div>
+    </div>
+    <div class="alert-md mt20 double">
+      <label>사업자 등록번호</label>
+      <span  style="top: 5px;" class="file-name">{{buss_name}}</span>
+      <img  style="
+      margin-top: 10px !important;" src="assets/imgs/cancel.png" class="btn-cancel" width="10" *ngIf="hasImg(old_buss_url, buss_url)" (click)="delImage('buss')">
+      <button style="margin-right: 15px;
+      right: 0px;
+      position: absolute;" ion-button color="light" (click)="clickGallery('buss')">업로드</button>
+      <div class="hrline"></div>
+      
+    </div>
+    <!--  -->
+    <div class="alert-md mt10">
+      <label>은행계좌</label>
+      <input style="width: 100%;" type="text" class="alert-input" [(ngModel)]="bank_name" placeholder="은행명"/>
+    </div>
+    <div class="alert-md">
+      <input style="width: 100%;" type="text" class="alert-input" [(ngModel)]="bank_num" placeholder="계좌번호"/>
+    </div>
+    <div class="alert-md mt10">
+      <label class="v-alignB">세금계산서 이메일</label>
+      <input style="width:100%;" type="email" class="alert-input" [(ngModel)]="tax_email"/>
+    </div>
+    <div class="alert-md">
+      <label class="v-alignB">세금계산서 담당자</label>
+      <input style="width:100%;" type="text" class="alert-input" [(ngModel)]="tax_clerk"/>
+    </div>
+    
+    <div class="btn-cont">
+      <button ion-button color="light" (click)="save()" class="boxBtn save">정보 저장</button>
+    </div>
+    
+  </div>
+</ion-content>
+
+<div *ngIf="isSearch()" class="search">
+  <div (click)="toggleSearchPop()" class="bg"></div>
+  <div class="result-wrap">
+    <div class="top-area etcForm">
+      <ion-searchbar [(ngModel)]="input_address" (ionInput)="searchAddress()" placeholder="주소를 입력해 주세요."></ion-searchbar>
+    </div>
+    <ul *ngIf="!isSearchVal()" class="result">
+      <li>주소를 상세히 입력해 주세요.</li>
+    </ul>
+    <ul class="result" id="search_list">
+    </ul>
+  </div>
+</div>

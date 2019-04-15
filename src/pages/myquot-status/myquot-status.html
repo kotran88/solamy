@@ -1,0 +1,132 @@
+
+<ion-header>
+  <div class="top_bar">
+    <span class="title">내 견적 현황</span>
+    <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
+  </div>
+</ion-header>
+
+<ion-segment [(ngModel)]="tab">
+  <ion-segment-button value="tab1">
+    요청 견적
+  </ion-segment-button>
+  <ion-segment-button value="tab2">
+    제출한 견적
+  </ion-segment-button>
+  <ion-segment-button value="tab3">
+    진행현황
+  </ion-segment-button>
+  
+</ion-segment>
+<!-- 요청 견적 -->
+<ion-content>
+  <div [ngSwitch]="tab">
+    <ion-list *ngSwitchCase="'tab1'">
+
+      <ion-grid class="p0 ion-grid" *ngFor="let item of quotData ; let idx = index">
+        <ion-row>
+          <ion-col col-12>
+            <div class="wrap">
+              <p class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
+              <div class="address mt10">ㆍ{{ partnersAddress(item.address) }}</div>
+              <div class="fee">태양광설치 용량: {{numFormat(item.month_fee)}}원 </div>
+            </div>
+
+            <div class="btn-cont">
+              <div class="quotation" (click)="quotation(item.id)">
+                <img src="assets/imgs/quotation_edit.png">견적내기
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <h3 class="tip" *ngIf="!hasQuot()">요청중인 견적이 없습니다.</h3>
+    </ion-list>
+    <!-- 제출한 견적 -->
+    <ion-list *ngSwitchCase="'tab2'">
+      
+      <ion-grid class="p0 ion-grid" *ngFor="let item of submitCont ; let idx = index">
+        <ion-row>
+          <ion-col col-12>
+            <div class="wrap">
+              <p style="    width: 45%;
+              float: left;" class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
+              <p style="    float: right;
+              width: 45%;
+
+              margin: 0;
+              margin-top: 0px !important;" class="contract mt1">[제출일자] <span>{{returnData(item.submit_cont_time)}}</span> </p>
+            
+              <div style="margin-top:25px !important;" class="address mt10">ㆍ{{ partnersAddress(item.address) }}</div>
+              <div style="margin-top:15px !important;" class="fee">ㆍ월평균 전기 요금: {{numFormat(item.month_fee)}}원</div>
+            </div>
+
+            <div class="btn-cont">
+              <div class="quotation" (click)="quotationView(item.id)">
+                <img src="assets/imgs/quotation_view.png">견적보기
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      <h3 class="tip" *ngIf="!hasSubmitCont()">제출한 견적이 없습니다.</h3>
+    </ion-list>
+    <!-- 계약 -->
+    <ion-list class="contract" *ngSwitchCase="'tab3'">
+
+      <ion-grid class="p0 ion-grid" *ngFor="let item of agreeCont ; let idx = index">
+        <img style="width: 70px; margin-left: 5%;" *ngIf="item.contract_path!=''" src="assets/imgs/계약완료.png"/>
+        <img style="width: 70px; margin-left: 5%;" *ngIf="item.contract_path==''" src="assets/imgs/계약 대기.png"/>
+        <ion-row>
+          <ion-col col-12>
+            <div class="wrap">
+              <p class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
+              <p class="contract mt1">[계약일] <span>{{returnData(item.contract_time)}}</span> </p>
+              <div class="address mt10">ㆍ{{ partnersAddress(item.address) }}</div>
+              <div class="fee">ㆍ월평균 전기 요금: {{numFormat(item.month_fee)}}원</div>
+            </div>
+
+            <div class="btn-cont">
+              <div  *ngIf="item.contract_path!=''"class="processStatus" (click)="processStatus(item.id, item.analyse_id)">
+                <img src="assets/imgs/calcu.png">진행현황
+              </div>
+              <div style="background : #e18f00"  *ngIf="item.contract_path==''"class="processStatus" (click)="processStatus(item.id, item.analyse_id)">
+                  <img src="assets/imgs/calcu.png">계약하기
+                </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <h3 class="tip" *ngIf="!hasAgreeCont()">계약된 견적이 없습니다.</h3>
+
+      <ion-grid class="p0 ion-grid" *ngFor="let item of complCont ; let idx = index">
+          <img style="width: 70px; margin-left: 5%;"  src="assets/imgs/설치완료.png"/>
+          <ion-row>
+            <ion-col col-12>
+              <div class="wrap">
+                <p class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
+                <p class="contract mt1">[계약일] <span>{{returnData(item.contract_time)}}</span> </p>
+                <div class="address mt10">ㆍ{{ partnersAddress(item.address) }}</div>
+                <div class="fee">ㆍ월평균 전기 요금: {{numFormat(item.month_fee)}}원</div>
+              </div>
+  
+              <div class="btn-cont">
+                <div style="background:#494949;" class="processStatus" (click)="processStatus(item.id, item.analyse_id)">
+                  <img src="assets/imgs/calcu.png">진행현황
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+        <h3 class="tip" *ngIf="!hasComplete()">완료된 견적이 없습니다.</h3>
+
+        
+    </ion-list>
+    <!-- 설치완료 -->
+   
+  </div>
+</ion-content>

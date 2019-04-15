@@ -1,0 +1,51 @@
+page-register {
+
+    .form {
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        background-color:#eff2f3;
+    }
+    .scroll-content {
+        background-color:#eff2f3;
+    }
+    ion-list { margin-bottom: 10px !important; }
+    ion-list ion-item {
+        background: transparent !important;
+        padding: 0 40px!important;
+    }
+    ion-input { color: #555; font-size: 17px; }
+    .input-wrapper{
+        display:block !important;
+    }
+    .tip { 
+        color: #555555;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 0 40px;
+        letter-spacing: -0.9px; 
+    }
+    // check box
+    .item.check-cont { padding: 0 40px; }
+    .item ion-label.label-md, .item label, .item strong, .item span.term { 
+        color:#555555; 
+        font-size: 10px; 
+        vertical-align: top;
+        letter-spacing: -1px;
+    }
+    .item strong { border-bottom: 1px solid; }
+    // login button
+    .item.btn-cont { padding: 0 40px 20px;}
+    .item.btn-cont button{
+        margin: 0;
+        border-radius: 1rem;
+        font-size: 17px;
+        color: white;
+        height: 45px;
+    }
+    .item.btn-cont button.createUser {
+        background: #e15a00;;
+        margin-top: 10px;
+    }
+    
+}
