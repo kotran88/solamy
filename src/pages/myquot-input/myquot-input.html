@@ -2,7 +2,7 @@
 <ion-header>
   <div class="top_bar">
     <span class="title">견적 입력</span>
-    <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+    <img style="width:32px;" src="assets/imgs/goback.png" class="back_img" (click)="back()">
   </div>
 </ion-header>
 
@@ -20,10 +20,7 @@
       <img src="assets/imgs/plus.png" style="right: 5%;" class="operator" (click)="operator('inc')">
     </div>
 
-    <div class="list">
-      <label class="mb0" stacked>제안 견적비용</label>
-      <input style="    border-bottom: solid lightgray 1px;" type="text" class="width95" value="390,000" [(ngModel)]="insPrice" />
-    </div>
+    
 
     <ion-item class="mt10" *ngIf="hasContInfo('module_name')">
       <ion-label style="font-size: 15px;
@@ -77,8 +74,8 @@
 
     <div class="btn-cont">
       <button style="border-radius: 10px;
-      color: white; color: black;
-    font-size: 25px;" ion-button color="light" (click)="quotSubmit()" class="boxBtn quotSubmit"><img src="assets/imgs/calcu.png"/>견적 제출하기</button>
+      color: white; color: white;
+    font-size: 25px;" ion-button color="light" (click)="quotSubmit()" class="boxBtn quotSubmit"><img style="width:14px; height:14px; margin-right:5px;" src="assets/imgs/calcu.png"/>견적 제출하기</button>
     </div>
 
   </div>

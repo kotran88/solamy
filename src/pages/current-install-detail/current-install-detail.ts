@@ -61,7 +61,10 @@ export class CurrentInstallDetailPage {
     }
     console.log(this.currentarray);
   }
-
+ 
+  back() {
+    this.navCtrl.pop({animate:false});
+  }
   ionViewDidLoad() {
     
   }

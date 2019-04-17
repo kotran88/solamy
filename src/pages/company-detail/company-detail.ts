@@ -40,7 +40,6 @@ export class CompanyDetailPage {
   }
   ionViewWillEnter() {
     // 회사상세정보
-    window.alert(this.comp_id);
     let modal = this.modalCtrl.create(LoadingPage, {txt: "로딩중입니다..."});
         modal.present({animate:false});
     let sendData = [];
@@ -55,7 +54,7 @@ export class CompanyDetailPage {
         // for(var i=0; i<result.length; i++){
          
           this.elect_licence = result.elect_num;
-          this.comData={"area":this.uintToString(result.area.data),"as_guide":this.uintToString(result.as_guide.data),"id":result.id,"elec_licence":result.elec_licence,"inv_flag":result.inv_flag,"inv_gflag":result.inv_gflag,"module_flag":result.module_flag,"module_gflag":result.module_gflag,"quality_flag":result.quality_flag,"inv_guarent":this.uintToString(result.inv_guarent.data),"module_guarent":this.uintToString(result.module_guarent.data),"quality":this.uintToString(result.quality.data),"inv_name":this.uintToString(result.inv_name.data),"module_name":this.uintToString(result.module_name.data),"address":this.uintToString(result.address.data),"company_name": this.uintToString(result.company_name.data),"comp_id":result.comp_id,"final_price":result.final_price,"rate":result.rate,"analyse_id":result.analyse_id};
+          this.comData={"complete_cnt":result.complete_cnt,"area":this.uintToString(result.area.data),"as_guide":this.uintToString(result.as_guide.data),"id":result.id,"elec_licence":result.elec_licence,"inv_flag":result.inv_flag,"inv_gflag":result.inv_gflag,"module_flag":result.module_flag,"module_gflag":result.module_gflag,"quality_flag":result.quality_flag,"inv_guarent":this.uintToString(result.inv_guarent.data),"module_guarent":this.uintToString(result.module_guarent.data),"quality":this.uintToString(result.quality.data),"inv_name":this.uintToString(result.inv_name.data),"module_name":this.uintToString(result.module_name.data),"address":this.uintToString(result.address.data),"company_name": this.uintToString(result.company_name.data),"comp_id":result.comp_id,"final_price":result.final_price,"rate":result.rate,"analyse_id":result.analyse_id};
         // }
 
       console.log("comdata");
@@ -121,8 +120,6 @@ export class CompanyDetailPage {
   }
   hasContInfo(type) {
     if(!this.contInfoData) return false;
-    console.log(type);
-    console.log(this.contInfoData);
     if(type == 'module_name' && this.contInfoData.module_flag == 1) {
       return true;
     }

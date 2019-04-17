@@ -24,6 +24,9 @@ page-process-status {
         margin-top: 100px !important;   
         background-color:#eff2f3;     
     }
+    .mt20{
+        background-color:#e97e00 !important;
+    }
     // 
     .list-md {
         margin-top: 0;
@@ -212,14 +215,16 @@ page-process-status {
     .wrap .contract.btn-cont button.viewContract {
         border-radius: 5px;
         background: none;
+        
         padding: 9px;
-        width: 50%;
-        color: white;
+        width: 90%;
+        color: #e15a00;
+        border: solid 1px #e15a00;
         font-size: 12px;
         font-weight: bold;
         position: relative;
         top: -14px;
-        background: black;
+        background: transparent;
     }
     .wrap .contract.btn-cont {
         padding: 15px 0 0;
@@ -271,7 +276,7 @@ page-process-status {
         }
     }
     .wrap .viewContract .button-inner {
-        font-size: 13px;
+        font-size: 15px;
         letter-spacing: -1px;
     }
     // rating

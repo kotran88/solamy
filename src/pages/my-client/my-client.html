@@ -13,8 +13,11 @@
     <ion-row>
       <ion-col col-12>
         <div class="wrap">
-          <p class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
-          <p class="contract mt1" *ngIf="hasContDate( idx )">[계약일] <span>{{ returnData(item.contract_time) }}</span> </p>
+          <p style="width: 45%;
+          display: inline-table;" class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
+          <p style="width: 45%;
+          margin-left: 25px;
+          display: inline-table;" class="contract mt1" *ngIf="hasContDate( idx )">[계약일] <span>{{ returnData(item.contract_time) }}</span> </p>
           <div class="address mt10">ㆍ{{item.address}}</div>
           <div class="fee">ㆍ월평균 전기 요금: {{numFormat(item.month_fee)}}원</div>
         </div>

@@ -26,7 +26,9 @@ import { CONFIG } from '../../config/config';
 })
 export class ProcessStatusPage {
   tab = "tab1";
+  evalval:any="평가하기"
   user_id = 0;
+  contractFinished:any;
   confirmmessage:any="구매확정"
   selectedIndex:any=-0;
   radio = false;
@@ -310,6 +312,7 @@ export class ProcessStatusPage {
   }
   viewContract2(){
     console.log("viewContract2 come");
+    this.contractFinished = this.getNow();
     this.confirmmessage="구매확정완료"
 
     let sendData = [];
@@ -321,28 +324,56 @@ this.http.postHttpData("/updateInstallStatus", sendData, (result) => {
   }
 // 평가주기
 setComment() {
-    
-  let sendData = [];
-      sendData["comp_id"] = this.contCompId;
-      sendData["user_id"] = this.user_id;
-      sendData["analyse_id"] = this.analyse_id;
-      sendData["comment"] = this.comment;
-      sendData["rate"] = this.rating;
-  this.http.postHttpData("/setCustomerRating", sendData, (result) => {
-    if(result) {
-      this.hasCom = 0;
-    }
-    else {
-      this.hasCom = 1;
-    }
-  });
+  console.log(this.rating);
+  console.log(this.comment);
+  if(this.rating==null||this.comment.length<6){
 
-  let sendData1 = [];
-  sendData1["analyse_id"] = this.analyse_id;
+    console.log(this.rating);
+    console.log(this.comment);
+    let alert = this.alertCtrl.create({ 
+        title: '후기(5자이상)와 평가를 남겨주세요',
+        buttons: [
+            {
+              text: '취소',
+              cssClass: 'cancel',
+              handler: data => {
+                // console.log("Cancel...", id);
+              }
+            },
+            {
+              text: '확인',
+              cssClass: 'confirm',
+              handler: data => {
+              }
+            }
+        ]
+      });
+      alert.present({animate:false});
+  }else{
+    let sendData = [];
+    sendData["comp_id"] = this.contCompId;
+    sendData["user_id"] = this.user_id;
+    sendData["analyse_id"] = this.analyse_id;
+    sendData["comment"] = this.comment;
+    sendData["rate"] = this.rating;
+this.http.postHttpData("/setCustomerRating", sendData, (result) => {
+  this.evalval="평가 완료"
+  if(result) {
+    this.hasCom = 0;
+  }
+  else {
+    this.hasCom = 1;
+  }
+});
+
+let sendData1 = [];
+sendData1["analyse_id"] = this.analyse_id;
 this.http.postHttpData("/updateInstallStatus", sendData, (result) => {
 console.log(result);
 });
 
+  }
+ 
 }
   viewContract() {
     console.log(this.contract_path);

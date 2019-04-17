@@ -370,26 +370,28 @@ banner_type 이 1인경우 url 을 쓰면 됩니다.
   anal() {
 
     if(this.userInfo==null){
-      let alert = this.alertCtrl.create({ 
-        title: '로그인을 해주세요',
-        // subTitle: '24시간 내에 (영업시간 기준) 분석 <br />요청하신 자료를 받아 보실 수 있습니다.',
-        buttons: [
-            {
-              text: '취소',
-              cssClass: 'cancel',
-              handler: data => {
-                // console.log("Cancel...", id);
-              }
-            },
-            {
-              text: '확인',
-              cssClass: 'confirm',
-              handler: data => {
-              }
-            }
-        ]
-      });
-      alert.present({animate:false});
+
+      this.navCtrl.push(LoginPage, {},{animate:false} );
+      // let alert = this.alertCtrl.create({ 
+      //   title: '로그인을 해주세요',
+      //   // subTitle: '24시간 내에 (영업시간 기준) 분석 <br />요청하신 자료를 받아 보실 수 있습니다.',
+      //   buttons: [
+      //       {
+      //         text: '취소',
+      //         cssClass: 'cancel',
+      //         handler: data => {
+      //           // console.log("Cancel...", id);
+      //         }
+      //       },
+      //       {
+      //         text: '확인',
+      //         cssClass: 'confirm',
+      //         handler: data => {
+      //         }
+      //       }
+      //   ]
+      // });
+      // alert.present({animate:false});
     }else{
       this.navCtrl.push(AnalyseClientPage, {  },{animate:false} );
     }

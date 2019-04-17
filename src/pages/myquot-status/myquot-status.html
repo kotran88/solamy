@@ -1,7 +1,7 @@
 
 <ion-header>
   <div class="top_bar">
-    <span class="title">내 견적 현황</span>
+    <strong class="title">내 견적 현황</strong>
     <img style="width:32px;" src="assets/imgs/logout.png" class="back_img" (click)="back()">
   </div>
 </ion-header>
@@ -28,13 +28,13 @@
           <ion-col col-12>
             <div class="wrap">
               <p class="date">[요청일자] <span>{{returnData(item.reg_time)}}</span> </p>
-              <div class="address mt10">ㆍ{{ partnersAddress(item.address) }}</div>
-              <div class="fee">태양광설치 용량: {{numFormat(item.month_fee)}}원 </div>
+              <div class="address mt10">ㆍ{{ item.address }}</div>
+              <div class="fee">월 평균 전기요금: {{numFormat(item.month_fee)}}원 </div>
             </div>
 
             <div class="btn-cont">
               <div class="quotation" (click)="quotation(item.id)">
-                <img src="assets/imgs/quotation_edit.png">견적내기
+                <img src="assets/imgs/calcu.png">견적내기
               </div>
             </div>
           </ion-col>

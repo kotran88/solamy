@@ -187,7 +187,6 @@ export class MyquotStatusPage {
     }
   }
   partnersAddress( addr ) {
-    console.log(addr);
     // if(addr) {
     //   var tmpAddr = addr.split(' ');
     //   var tmp = '';

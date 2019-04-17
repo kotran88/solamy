@@ -109,13 +109,15 @@
             <div class="contract btn-cont" *ngIf="isContract()">
               <p>{{ contCompDate }}</p>
               <h6>계약이 완료되었습니다.</h6>
-              <button ion-button class="viewContract mt20" (click)="viewContract()">계약서 보기</button>
+              <button style="background-color:transparent !important;" ion-button class="viewContract mt20" (click)="viewContract()"><img style="    width: 14px;
+                height: 14px;
+                margin-right: 5px;" src="assets/imgs/pencil.png">계약서 보기</button>
             </div>
           </div>
           
           <div class="middle"></div>
 
-          <div *ngIf="contData.add_price_content.length!=0" class="wrap wrap_2">
+          <div *ngIf="contData.add_price_content!=undefined" class="wrap wrap_2">
               <h3 class="title">추가 금액</h3>
               
               <div class="list">
@@ -146,7 +148,12 @@
             <div class="contract btn-cont" *ngIf="isPay()">
               <p>{{ payDate }}</p>
               <h6>결제가 완료되었습니다.</h6>
-              <button ion-button class="viewContract mt20" (click)="viewContract2()">구매확정</button>
+              <button style="background: #e15a00 !important;
+              color: white !important;" ion-button class="viewContract mt20" (click)="viewContract2()">
+              <img style="    width: 14px;
+              height: 14px;
+              margin-right: 5px;" src="assets/imgs/checked.png">
+              {{confirmmessage}}</button>
 
 
             </div>
@@ -184,8 +191,8 @@
               </ul>
               <textarea class="textarea" *ngIf="!hasComment()" placeholder="후기를 남겨주세요(500자 이내)" [(ngModel)]="comment"></textarea>
               <textarea class="textarea" *ngIf="hasComment()" disabled [(ngModel)]="comment"></textarea>
-              <button ion-button disabled *ngIf="hasComment()" class="mt20 width100">평가 완료</button>
-              <button ion-button *ngIf="!hasComment()" (click)="setComment()" class="mt20 width100">평가 완료</button>
+              <button sytle="background-color:#e97e00 !important;" ion-button disabled *ngIf="hasComment()" class="mt20 width100">평가 완료</button>
+              <button sytle="background-color:#e97e00 !important;" ion-button *ngIf="!hasComment()" (click)="setComment()" class="mt20 width100">{{evalval}}</button>
             </div>
           </div>
         </div>

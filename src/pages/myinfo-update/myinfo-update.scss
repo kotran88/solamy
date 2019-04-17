@@ -2,6 +2,10 @@ page-myinfo-update {
     ion-content {
         color: #333;
     }
+    .scroll-content{
+
+    background-color: #eff2f3;
+    }
     .top-wrap {
         text-align: center;
         height: 105px;
@@ -13,12 +17,12 @@ page-myinfo-update {
         letter-spacing: -1px;
     }
     .top-wrap button {
-        border: 1px solid #E7641B;
-        border-radius: 10rem;
+        border: 1px solid #e15a00;
+        border-radius: 3px;
         background: none;
         padding: 5px;
         width: 100px;
-        color: #E7641C;
+        color: white;
         font-size: 12px;
         font-weight: bold;
         margin: 0;
@@ -67,7 +71,7 @@ page-myinfo-update {
         padding: 0;
         background: black;
     color: white;
-    border-radius: 10px;
+    border-radius: 3px;
 
     }
     .alert-md button span {
@@ -101,11 +105,12 @@ page-myinfo-update {
     }
     .btn-cont .save {
         margin: 0 auto;
-        border-radius: 10rem;
+        border-radius: 3px;
         font-size: 15px;
-        color: #333;
+        color: white;
         height: 45px;
-        background: #FFA200;
+        background: #e15a00;
+
         width: 95%;
     }
     

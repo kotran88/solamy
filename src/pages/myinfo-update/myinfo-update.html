@@ -2,7 +2,7 @@
 <ion-header>
   <div class="top_bar">
     <span class="title">내정보 업데이트</span>
-    <img src="assets/imgs/back.png" class="back_img" (click)="back()">
+    <img style="width:32px;" src="assets/imgs/goback.png" class="back_img" (click)="back()">
   </div>
 </ion-header>
 
@@ -41,11 +41,11 @@
     </div>
     <div class="alert-md">
       <label><span>*</span> 연락처</label>
-      <input  style="width:100%;" style="width: 100%;" type="number" class="alert-input" [(ngModel)]="contact" placeholder="‘-’제외하고 숫자만 입력"/>
+      <input  style="width:100%;" style="width: 100%;" type="text" class="alert-input" [(ngModel)]="contact" placeholder="‘-’제외하고 숫자만 입력"/>
     </div>
     <div class="alert-md">
       <label>전화번호</label>
-      <input style="width:100%;" type="number" class="alert-input" [(ngModel)]="hp_num" placeholder="‘-’제외하고 숫자만 입력"/>
+      <input style="width:100%;" type="text" class="alert-input" [(ngModel)]="hp_num" placeholder="‘-’제외하고 숫자만 입력"/>
     </div>
     <!--  -->
     <div class="alert-md mt20 double">
@@ -87,7 +87,7 @@
     </div>
     
     <div class="btn-cont">
-      <button ion-button color="light" (click)="save()" class="boxBtn save">정보 저장</button>
+      <button ion-button color="light" (click)="save()" class="boxBtn save"><img style="width:14px; height:14px; margin-right:5px;" src="assets/imgs/check.png">정보 저장</button>
     </div>
     
   </div>

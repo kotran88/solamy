@@ -3,10 +3,9 @@ page-login {
         // background: url(../assets/imgs/login/bg.png) no-repeat;
         // background-size: cover;
         overflow: hidden;
-        background: url(../assets/imgs/login/bg.png);
-        background-position: 50% 50%;
+        background: url(../assets/imgs/loginbackground.png);
+        background-position: 62%;
         background-repeat: no-repeat;
-        background-size: cover;
     }
     .scroll-content {
         overflow-y: hidden!important;
@@ -82,9 +81,9 @@ page-login {
     .item.btn-cont a.txtBtn { color: #FFF; text-decoration: underline; font-size: 12px;}
     
     .item.btn-cont a.kakao {
-        background-color: #F9E000;
+        background-color: #f9d300;
         background-image: url(../assets/imgs/kakao.png);
-        background-position: 7% 50%;
+        background-position: 27% 50%;
         background-repeat: no-repeat;
         background-size: 23px;
     }

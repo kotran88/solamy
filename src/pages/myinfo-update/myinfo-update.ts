@@ -153,6 +153,8 @@ export class MyinfoUpdatePage {
         sendData["bank_num"] = this.bank_num;
         sendData["tax_email"] = this.tax_email;
         sendData["tax_clerk"] = this.tax_clerk;
+
+    console.log(sendData);
     this.http.postHttpData("/updatePartnerData", sendData, (result) => {
       modal.dismiss({}, "", {animate:false});
       if(result) {

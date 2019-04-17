@@ -81,8 +81,8 @@ margin-left: -0.5em;
     </div>
     <div style="    margin-top: 1em;" class="quotation">
       <div class="up" style="display: list-item;    margin-top: 0.8em;">
-          <span style="  font-size:18px;  float: left;
-          margin-left: 18px;" (click)="quotation();">실시간 견적현황</span>
+          <strong style="  font-size:18px;  float: left;
+          margin-left: 18px;" (click)="quotation();">실시간 견적현황</strong>
           <span class="more" style="
           float: right;
     
@@ -92,14 +92,10 @@ margin-left: -0.5em;
           
       </div>
       <div #scroll class="down">
-        <div *ngFor="let a of array_quotaion">
+        <div  *ngFor="let a of array_quotaion">
 
 
-          <p style="    height: 15px;
-           white-space: nowrap; 
-      overflow: hidden;
-      text-overflow: ellipsis; 
-          overflow-x: hidden; width:50%; text-align: left; margin-left:15px; float:left;"> {{a.address}}  </p> <p style="width:15%; float:left;"> {{a.name}}</p><p style="width:20%; margin-right:15px; float:left;">{{a.reg_date}}</p>
+          <p class="quotationp"> {{a.address}}  </p> <p class="quotationp1 "style="width:15%; float:left;"> {{a.name}}</p><p class="quotationp2" style="width:20%; margin-right:15px; float:left;">{{a.reg_date}}</p>
           </div>
       </div>
      
@@ -172,9 +168,9 @@ margin-top:1em;
     <div class="installation">
       <div class="up" style="display: list-item;    margin-top: 0.8em;">
        
-        <span style="    float: left;
+        <strong style="    float: left;
        
-        margin-left: 15px; font-size: 18px;" (click)="installcheck()">설치 현황</span>
+        margin-left: 15px; font-size: 18px;" (click)="installcheck()">설치 현황</strong>
       <span class="more" style="
       float: right;
 
@@ -197,40 +193,44 @@ margin-top:1em;
         
       </div>
     </div>
-  
-    <button style="   
-          text-align: center;
-    -webkit-box-shadow: none !important;
-          background: #353b5d;
-          width: 40%;
-          margin-top: 20px;
-    border-radius: 30px 0px 0px 30px;
-    color: white;
-          " ion-button color="light" class="login" (click)="service_intro()"><img style="width: 12px;
-    height: 12px;     margin-right: 5px;" class="mark" src="assets/imgs/grid.png">서비스 소개</button>
-    <button style="   
-    text-align: center;
-    background: #566174;
+    <div class="mainlast" >
+        <button style="   
+        text-align: center;
+  -webkit-box-shadow: none !important;
+        background: #353b5d;
+        width: 45%;
+        margin-top: 20px;
+        left:30%;
+  border-radius: 30px 0px 0px 30px;
+  color: white;
+        " ion-button color="light" class="login" (click)="service_intro()"><img style="width: 12px;
+  height: 12px;     margin-right: 5px;" class="mark" src="assets/imgs/grid.png">서비스 소개</button>
+  <button style="   
+  text-align: center;
+  background: #566174;
 color: white;
 margin-top: 20px;
-width: 40%;
-    border-radius: 0px 30px 30px 0px;
+width: 45%;
+left:30%;
+  border-radius: 0px 30px 30px 0px;
 margin-left: -0.5em;
-    -webkit-box-shadow: none !important;
-    " ion-button color="light" class="login" (click)="customer_center()"><img style="width: 12px;
+  -webkit-box-shadow: none !important;
+  " ion-button color="light" class="login" (click)="customer_center()"><img style="width: 12px;
 height: 12px;     margin-right: 5px;" class="mark" src="assets/imgs/earphone.png">고객센터</button>
+
+    </div>
+    
 
    
 
   </div>
   
   
-</ion-content>
-
 <ion-footer>
   <div class="footer-cont">
     <h3>© 솔라미(Solarmy)</h3>
     <p>통신판매업신고: 제20129-경기포천-19129호</p>
-    <img src="assets/imgs/footer_logo.png">
   </div>
 </ion-footer>
+
+</ion-content>
